@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rickeychiu</title>
+    <meta
+      name="description"
+      content="Rickey Chiu — creative builder and maker. Portfolio, resume, and experiments."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero" style="--hero-bg-url: url('assets/hero-bg.jpg')">
+      <nav class="lang-picker" aria-label="Language">
+        <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
+          EN
+        </button>
+        <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
+          中
+        </button>
+        <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
+          日
+        </button>
+        <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
+          한
+        </button>
+      </nav>
+
+      <div class="hero-image-overlay"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h1 id="hero-title">hi, i'm rickey.</h1>
+        <p id="hero-subtitle">i like to create things.</p>
+      </div>
+    </header>
+
+    <main class="content content-primary">
+      <section class="intro" aria-label="Introduction">
+        <p class="intro-paragraph">
+          Whether it be terraforming blocky landscapes, optimizing cell segmentation models, or making company websites for startups in Tokyo, I
+          enjoy exploring the space where software engineering, artificial intelligence, and interactive media meet.
+        </p>
+      </section>
+
+      <section class="blocks" aria-label="Highlights">
+        <article class="neumo-card">
+          <div class="card-grid">
+            <div class="card-text">
+              <h2>Programming Projects</h2>
+              <p>
+                Code-first work: machine learning experiments, systems, prototypes, and tools I’ve built to learn (and ship).
+              </p>
+              <a class="neumo-button" href="projects.html">Open projects</a>
+            </div>
+            <div class="card-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>placeholder image</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="neumo-card">
+          <div class="card-grid">
+            <div class="card-text">
+              <h2>Creative Projects</h2>
+              <p>
+                Interactive media, game-ish experiments, design, and things that are hard to explain without seeing them.
+              </p>
+              <a class="neumo-button neumo-button-secondary" href="projects.html">See creative work</a>
+            </div>
+            <div class="card-media" aria-hidden="true">
+              <div class="media-placeholder media-placeholder-alt">
+                <span>placeholder image</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="neumo-card">
+          <div class="card-grid">
+            <div class="card-text">
+              <h2>About</h2>
+              <p>
+                My interests range from game design and machine learning to computer graphics and educational tech — all driven by a curiosity for how people learn, build, and connect.
+              </p>
+              <a class="neumo-button neumo-button-secondary" href="about.html">More about me</a>
+            </div>
+            <div class="card-media" aria-hidden="true">
+              <div class="media-placeholder">
+                <span>placeholder image</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <section class="content content-secondary" aria-label="Skills and education">
+      <div class="skills-grid">
+        <div class="skills-col">
+          <h2>Skills</h2>
+          <p class="skills-note">A quick snapshot — expand later with tools you actually use.</p>
+          <ul class="pill-list" aria-label="Skills list">
+            <li class="pill">JavaScript</li>
+            <li class="pill">Python</li>
+            <li class="pill">Machine Learning</li>
+            <li class="pill">Web</li>
+            <li class="pill">Design</li>
+            <li class="pill">3D / Graphics</li>
+          </ul>
+        </div>
+        <div class="skills-col">
+          <h2>Education</h2>
+          <p class="skills-note">Put your school / degree / graduation year here.</p>
+          <ul class="edu-list">
+            <li>
+              <div class="edu-title">Your University / School</div>
+              <div class="edu-meta">Your program • 20XX–20XX</div>
+            </li>
+            <li>
+              <div class="edu-title">Exchange / Program / Bootcamp</div>
+              <div class="edu-meta">Focus area • 20XX</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="behind-footer" aria-label="Links">
+      <a
+        class="neumorphic-circle"
+        href="https://github.com/your-username"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        GH
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="https://www.linkedin.com/in/your-handle/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+      >
+        in
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="mailto:you@example.com"
+        aria-label="Email"
+        title="Email"
+      >
+        @
+      </a>
+    </footer>
+
+    <div id="viewport">
+      <div id="map"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

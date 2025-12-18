@@ -1,0 +1,475 @@
+:root {
+  /* Light mode base (easier to design/extend) */
+  --bg: #eef1f5;
+  --surface: #eef1f5;
+
+  /* Classic soft neumorphism shadow pair (light mode) */
+  --shadow-dark: rgba(163, 177, 198, 0.55);
+  --shadow-light: rgba(255, 255, 255, 0.9);
+
+  --text: #14161a;
+  --muted: rgba(20, 22, 26, 0.62);
+  --ring: rgba(20, 22, 26, 0.25);
+
+  /* Typography (Apple-y San Francisco system stack) */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+    "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+/* --- Hero --- */
+.hero {
+  --hero-bg-url: none;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 8vh 6vw;
+  overflow: hidden;
+  padding-bottom: calc(8vh + 90px);
+}
+
+.hero-bg {
+  position: fixed;
+  inset: 0;
+  background-image: var(--hero-bg-url);
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  transform: scale(1.03);
+  filter: grayscale(12%) contrast(1.12) brightness(1.02) saturate(1.08);
+}
+
+.hero-image-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(80% 80% at 50% 30%, rgba(255, 255, 255, 0.14) 0%, rgba(238, 241, 245, 0.78) 68%),
+    linear-gradient(to bottom, rgba(238, 241, 245, 0.18), rgba(238, 241, 245, 0.86));
+}
+
+.hero-content {
+  text-align: center;
+  /* Was 18ch (super narrow); give it room so title/subtitle stay as two lines */
+  max-width: min(52rem, 92vw);
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-weight: 720;
+  letter-spacing: -0.03em;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.03;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  text-wrap: balance;
+  font-family: var(--font-display);
+}
+
+.hero-content p {
+  margin: 16px 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--muted);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  font-family: var(--font-sans);
+  font-weight: 520;
+}
+
+/* --- Intro section (below hero) --- */
+.intro {
+  max-width: 1100px;
+  margin: 0 auto 18px;
+}
+
+.intro-paragraph {
+  margin: 0;
+  max-width: 100%;
+  font-size: clamp(1.02rem, 1.35vw, 1.16rem);
+  line-height: 1.65;
+  color: rgba(20, 22, 26, 0.74);
+  text-align: left;
+}
+
+/* --- Neumorphic buttons --- */
+.neumo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  background: linear-gradient(145deg, #f6f8fb, #e1e6ee);
+  box-shadow:
+    10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.7),
+    inset -1px -1px 2px rgba(163, 177, 198, 0.16);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.neumo-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    12px 12px 24px var(--shadow-dark),
+    -12px -12px 24px var(--shadow-light),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.74),
+    inset -1px -1px 2px rgba(163, 177, 198, 0.16);
+}
+
+.neumo-button:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 8px 8px 16px var(--shadow-dark),
+    inset -8px -8px 16px var(--shadow-light);
+}
+
+.neumo-button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.neumo-button-secondary {
+  color: rgba(20, 22, 26, 0.84);
+  filter: saturate(0.98);
+}
+
+/* --- Content blocks (two-column neumorphic cards) --- */
+.content {
+  position: relative;
+  z-index: 5;
+
+  /* Pull the body "surface" up over the hero so the hero feels behind it */
+  width: min(1240px, calc(100% - 32px));
+  margin: -78px auto 52px;
+  padding: 56px clamp(18px, 4vw, 44px) 44px;
+
+  border-radius: 36px;
+  background: var(--surface);
+  box-shadow:
+    18px 18px 36px var(--shadow-dark),
+    -18px -18px 36px var(--shadow-light);
+}
+
+.content-primary {
+  /* Make the surface "peek" without showing text at initial load */
+  padding-top: 110px;
+}
+
+.content-primary::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(20, 22, 26, 0.14);
+  box-shadow:
+    inset 2px 2px 4px rgba(163, 177, 198, 0.35),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.75);
+}
+
+.content-secondary {
+  margin: 0 auto 72px;
+  padding-top: 36px;
+}
+
+@media (max-width: 520px) {
+  .content {
+    width: calc(100% - 22px);
+    border-radius: 28px;
+    margin-top: -64px;
+  }
+
+  .content-primary {
+    padding-top: 96px;
+  }
+}
+
+/* --- Footer links (behind surface) --- */
+.behind-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 16px 56px;
+}
+
+.behind-footer .neumorphic-circle {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.blocks {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.neumo-card {
+  border-radius: 28px;
+  background: linear-gradient(145deg, #f6f8fb, #e1e6ee);
+  box-shadow:
+    14px 14px 28px var(--shadow-dark),
+    -14px -14px 28px var(--shadow-light);
+  overflow: hidden;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.card-text {
+  padding: 26px 26px 24px;
+  text-align: left;
+}
+
+.card-text h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.card-text p {
+  margin: 0 0 16px;
+  color: rgba(20, 22, 26, 0.72);
+  line-height: 1.55;
+}
+
+.card-media {
+  padding: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.media-placeholder {
+  width: 100%;
+  height: 220px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: rgba(20, 22, 26, 0.55);
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  background:
+    radial-gradient(800px 240px at 20% 20%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(145deg, rgba(210, 222, 240, 0.9), rgba(245, 248, 252, 0.95));
+  box-shadow:
+    inset 9px 9px 18px var(--shadow-dark),
+    inset -9px -9px 18px var(--shadow-light);
+}
+
+.media-placeholder-alt {
+  background:
+    radial-gradient(700px 240px at 70% 15%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(145deg, rgba(232, 216, 255, 0.7), rgba(245, 248, 252, 0.96));
+}
+
+.media-placeholder span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow:
+    6px 6px 14px rgba(163, 177, 198, 0.28),
+    -6px -6px 14px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 860px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-media {
+    padding-top: 0;
+  }
+
+  .media-placeholder {
+    height: 200px;
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skills-col {
+  padding: 26px 26px 24px;
+  text-align: left;
+}
+
+.skills-col + .skills-col {
+  border-left: 1px solid rgba(20, 22, 26, 0.06);
+}
+
+.skills-note {
+  margin: 8px 0 14px;
+  color: rgba(20, 22, 26, 0.62);
+  line-height: 1.5;
+}
+
+.pill-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-weight: 650;
+  color: rgba(20, 22, 26, 0.78);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    8px 8px 16px rgba(163, 177, 198, 0.26),
+    -8px -8px 16px rgba(255, 255, 255, 0.75);
+}
+
+.edu-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.edu-title {
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.edu-meta {
+  margin-top: 2px;
+  color: rgba(20, 22, 26, 0.62);
+}
+
+@media (max-width: 860px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-col + .skills-col {
+    border-left: 0;
+    border-top: 1px solid rgba(20, 22, 26, 0.06);
+  }
+}
+
+/* --- Language picker --- */
+.lang-picker {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+}
+
+.neumorphic-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 0;
+  /* Slight gradient removes the "cylinder" look and feels more like a soft pill */
+  background: linear-gradient(145deg, #f6f8fb, #e1e6ee);
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  /* Outer + tiny inner highlights = smoother “raised” shape */
+  box-shadow:
+    9px 9px 18px var(--shadow-dark),
+    -9px -9px 18px var(--shadow-light),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.7),
+    inset -1px -1px 2px rgba(163, 177, 198, 0.18);
+  display: grid;
+  place-items: center;
+  transition: transform 140ms ease, box-shadow 140ms ease, color 140ms ease;
+}
+
+.neumorphic-circle:hover {
+  color: var(--text);
+  box-shadow:
+    11px 11px 22px var(--shadow-dark),
+    -11px -11px 22px var(--shadow-light),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.75),
+    inset -1px -1px 2px rgba(163, 177, 198, 0.18);
+}
+
+.neumorphic-circle:active {
+  transform: scale(0.96);
+  background: linear-gradient(145deg, #e1e6ee, #f6f8fb);
+  box-shadow:
+    inset 7px 7px 14px var(--shadow-dark),
+    inset -7px -7px 14px var(--shadow-light);
+  color: var(--text);
+}
+
+.neumorphic-circle[aria-pressed="true"] {
+  color: var(--text);
+  background: linear-gradient(145deg, #e1e6ee, #f6f8fb);
+  box-shadow:
+    inset 7px 7px 14px var(--shadow-dark),
+    inset -7px -7px 14px var(--shadow-light);
+}
+
+.neumorphic-circle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neumorphic-circle {
+    transition: none;
+  }
+}
+
+/* --- Placeholder for your future draggable schematic --- */
+#viewport {
+  height: 0;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+#map {
+  display: none;
+}
