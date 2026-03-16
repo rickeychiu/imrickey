@@ -1,250 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>rickeychiu</title>
-    <meta
-      name="description"
-      content="Rickey Chiu — creative builder and maker. Portfolio, resume, and experiments."
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="hero" style="--hero-bg-url: url('assets/hero-bg.jpg')">
-      <nav class="lang-picker" aria-label="Language">
-        <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
-          EN
-        </button>
-        <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
-          中
-        </button>
-        <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
-          日
-        </button>
-        <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
-          한
-        </button>
-      </nav>
 
-      <div class="hero-image-overlay"></div>
-      <div class="hero-bg" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rickeychiu</title>
+  <meta name="description" content="Rickey Chiu — creative builder and maker. Portfolio, resume, and experiments." />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <div class="hero-content">
-        <h1 id="hero-title">
-          <span class="typewriter-text">hi, i'm rickey.</span><span class="caret"></span>
-        </h1>
-        <p id="hero-subtitle">i like to create things.</p>
-      </div>
-    </header>
+<body>
+  <header class="hero" style="--hero-bg-url: url('assets/hero-bg.jpg')">
+    <nav class="lang-picker" aria-label="Language">
+      <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
+        EN
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
+        中
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
+        日
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
+        한
+      </button>
+    </nav>
 
-    <main class="content content-primary">
-      <section class="intro" aria-label="Introduction">
-        <p class="intro-paragraph" data-i18n="intro">
-          Whether it be terraforming blocky landscapes, optimizing cell segmentation models, or making company websites for startups in Tokyo, I
-          enjoy exploring the space where software engineering, artificial intelligence, and interactive media meet.
-        </p>
-      </section>
+    <div class="hero-image-overlay"></div>
+    <div class="hero-bg" aria-hidden="true"></div>
 
-      <section class="blocks" aria-label="Highlights">
-        <article class="neumo-card">
-          <div class="card-grid">
-            <div class="card-text">
-              <h2 data-i18n="progTitle">Programming & Academic Projects</h2>
-              <p data-i18n="progDesc">
-                Anything from full-stack iOS apps to research papers. Half-baked prototypes, tools, anything nice.
-              </p>
-              <a class="neumo-button" href="programmingprojects.html" data-i18n="progCta">Open projects</a>
-            </div>
-            <div class="card-media" aria-hidden="true">
-              <div class="media-placeholder">
-                <span>placeholder image</span>
-              </div>
-            </div>
-          </div>
-        </article>
+    <div class="hero-content">
+      <h1 id="hero-title">
+        <span class="typewriter-text">hi, i'm rickey.</span><span class="caret"></span>
+      </h1>
+      <p id="hero-subtitle">i like to create things.</p>
+    </div>
+  </header>
 
-        <article class="neumo-card">
-          <div class="card-grid">
-            <div class="card-text">
-              <h2 data-i18n="creativeTitle">Creative Projects</h2>
-              <p data-i18n="creativeDesc">
-                Interactive media, photography, design, and things that are hard to explain without seeing them.
-              </p>
-              <a class="neumo-button neumo-button-secondary" href="creativeprojects.html" data-i18n="creativeCta">See creative work</a>
-            </div>
-            <div class="card-media" aria-hidden="true">
-              <div class="media-placeholder media-placeholder-alt">
-                <span>placeholder image</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="neumo-card">
-          <div class="card-grid">
-            <div class="card-text">
-              <h2 data-i18n="aboutTitle">About</h2>
-              <p data-i18n="aboutDesc">
-                My interests range from game design and machine learning to computer graphics and educational tech — all driven by a curiosity for how people learn, build, and connect.
-              </p>
-              <a class="neumo-button neumo-button-secondary" href="aboutme.html" data-i18n="aboutCta">More about me</a>
-            </div>
-            <div class="card-media" aria-hidden="true">
-              <div class="media-placeholder">
-                <span>placeholder image</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <section class="content content-secondary" aria-label="Skills and education">
-      <div class="skills-grid">
-        <div class="skills-col">
-          <h2 data-i18n="skillsTitle">Skills</h2>
-          <div class="skills-group">
-            <p class="skills-note" data-i18n="progLangsTitle">Here are the programming languages I'm familiar with...</p>
-            <ul class="pill-list" aria-label="Programming languages">
-              <li class="pill" data-i18n="langCplusplus">C++</li>
-              <li class="pill" data-i18n="langPython">Python</li>
-              <li class="pill" data-i18n="langJava">Java</li>
-              <li class="pill" data-i18n="langSwift">Swift</li>
-              <li class="pill" data-i18n="langWeb">HTML / CSS / JS</li>
-              <li class="pill" data-i18n="langPhp">PHP</li>
-              <li class="pill" data-i18n="langCsharp">C#</li>
-              <li class="pill" data-i18n="langC">C</li>
-            </ul>
-          </div>
-
-          <div class="skills-group">
-            <p class="skills-note" data-i18n="spokenTitle">As for spoken languages, I know...</p>
-            <ul class="pill-list" aria-label="Spoken languages">
-              <li class="pill" data-i18n="spokenEnglish">English</li>
-              <li class="pill" data-i18n="spokenMandarin">Mandarin</li>
-              <li class="pill" data-i18n="spokenJapanese">Japanese</li>
-              <li class="pill" data-i18n="spokenKorean">Korean</li>
-            </ul>
-          </div>
-
-          <div class="skills-group">
-            <p class="skills-note" data-i18n="toolsTitle">And here are the programming tools I use...</p>
-            <ul class="pill-list" aria-label="Programming tools">
-              <li class="pill" data-i18n="toolVscode">VS Code</li>
-              <li class="pill" data-i18n="toolXcode">Xcode</li>
-              <li class="pill" data-i18n="toolIntellij">IntelliJ</li>
-              <li class="pill" data-i18n="toolEclipse">Eclipse</li>
-              <li class="pill" data-i18n="toolUnity">Unity</li>
-              <li class="pill" data-i18n="toolGithub">GitHub</li>
-            </ul>
-          </div>
-
-          <div class="skills-group">
-            <p class="skills-note" data-i18n="creativeToolsTitle">As well as some creative and productivity tools!</p>
-            <ul class="pill-list" aria-label="Creative and productivity tools">
-              <li class="pill" data-i18n="toolPs">Adobe Photoshop</li>
-              <li class="pill" data-i18n="toolAi">Adobe Illustrator</li>
-              <li class="pill" data-i18n="toolLr">Adobe Lightroom</li>
-              <li class="pill" data-i18n="toolFigma">Figma</li>
-              <li class="pill" data-i18n="toolCanva">Canva</li>
-              <li class="pill" data-i18n="toolProcreate">Procreate</li>
-              <li class="pill" data-i18n="toolCapcut">CapCut</li>
-              <li class="pill" data-i18n="toolNotion">Notion</li>
-              <li class="pill" data-i18n="toolDrive">Google Drive</li>
-            </ul>
-          </div>
-        </div>
-        <div class="skills-col">
-          <h2 data-i18n="educationTitle">Education</h2>
-          <ul class="edu-list">
-            <li>
-              <div class="edu-item">
-                <a
-                  class="edu-icon"
-                  aria-label="Columbia University"
-                  href="https://www.columbia.edu/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src="assets/columbialogo.png" alt="Columbia University logo" />
-                </a>
-                <div>
-                  <div class="edu-title" data-i18n="edu1Title">Your University / School</div>
-                  <div class="edu-meta" data-i18n="edu1Meta">Your program • 20XX–20XX</div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="edu-item">
-                <a
-                  class="edu-icon"
-                  aria-label="UC Santa Barbara"
-                  href="https://www.ucsb.edu/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img src="assets/ucsblogo.png" alt="UC Santa Barbara logo" />
-                </a>
-                <div>
-                  <div class="edu-title" data-i18n="edu2Title">Exchange / Program / Bootcamp</div>
-                  <div class="edu-meta" data-i18n="edu2Meta">Focus area • 20XX</div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <h3 class="edu-courses-title" data-i18n="coursesTitle">Key Courses</h3>
-          <ul class="pill-list course-list" aria-label="Key courses">
-            <li class="pill" data-i18n="course1">Data Structures & Algorithms</li>
-            <li class="pill" data-i18n="course2">Operating Systems</li>
-            <li class="pill" data-i18n="course3">Computer Networks</li>
-            <li class="pill" data-i18n="course4">Databases</li>
-            <li class="pill" data-i18n="course5">Machine Learning</li>
-            <li class="pill" data-i18n="course6">Computer Graphics</li>
-            <li class="pill" data-i18n="course7">Human-Computer Interaction</li>
-            <li class="pill" data-i18n="course8">Linear Algebra</li>
-            <li class="pill" data-i18n="course9">Probability & Statistics</li>
-            <li class="pill" data-i18n="course10">Distributed Systems</li>
-          </ul>
-        </div>
-      </div>
+  <main class="content content-primary">
+    <section class="intro" aria-label="Introduction">
+      <p class="intro-paragraph" data-i18n="intro">
+        Whether it be terraforming blocky landscapes, optimizing cell segmentation models, or making company websites
+        for startups in Tokyo, I
+        enjoy exploring the space where software engineering, artificial intelligence, and interactive media meet.
+      </p>
     </section>
 
-    <footer class="behind-footer" aria-label="Links">
-      <a
-        class="neumorphic-circle"
-        href="https://github.com/rickeychiu"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="GitHub"
-        title="GitHub"
-      >
-        GH
-      </a>
-      <a
-        class="neumorphic-circle"
-        href="https://www.linkedin.com/in/rickeychiu/"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="LinkedIn"
-        title="LinkedIn"
-      >
-        in
-      </a>
-      <a
-        class="neumorphic-circle"
-        href="mailto:you@example.com"
-        aria-label="Email"
-        title="Email"
-      >
-        @
-      </a>
-    </footer>
+    <section class="blocks" aria-label="Highlights">
+      <article class="neumo-card">
+        <div class="card-grid">
+          <div class="card-text">
+            <h2 data-i18n="progTitle">Programming & Academic Projects</h2>
+            <p data-i18n="progDesc">
+              Anything from full-stack iOS apps to research papers. Half-baked prototypes, tools, anything nice.
+            </p>
+            <a class="neumo-button" href="programmingprojects.html" data-i18n="progCta">Open projects</a>
+          </div>
+          <div class="card-media" aria-hidden="true">
+            <div class="media-placeholder">
+              <span>placeholder image</span>
+            </div>
+          </div>
+        </div>
+      </article>
 
-    <div id="viewport">
-      <div id="map"></div>
+      <article class="neumo-card">
+        <div class="card-grid">
+          <div class="card-text">
+            <h2 data-i18n="creativeTitle">Creative Projects</h2>
+            <p data-i18n="creativeDesc">
+              Interactive media, photography, design, and things that are hard to explain without seeing them.
+            </p>
+            <a class="neumo-button neumo-button-secondary" href="creativeprojects.html" data-i18n="creativeCta">See
+              creative work</a>
+          </div>
+          <div class="card-media" aria-hidden="true">
+            <div class="media-placeholder media-placeholder-alt">
+              <span>placeholder image</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="neumo-card">
+        <div class="card-grid">
+          <div class="card-text">
+            <h2 data-i18n="aboutTitle">About</h2>
+            <p data-i18n="aboutDesc">
+              My interests range from game design and machine learning to computer graphics and educational tech — all
+              driven by a curiosity for how people learn, build, and connect.
+            </p>
+            <a class="neumo-button neumo-button-secondary" href="aboutme.html" data-i18n="aboutCta">More about me</a>
+          </div>
+          <div class="card-media" aria-hidden="true">
+            <div class="media-placeholder">
+              <span>placeholder image</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <section class="content content-secondary" aria-label="Skills and education">
+    <div class="skills-grid">
+      <div class="skills-col">
+        <h2 data-i18n="skillsTitle">Skills</h2>
+        <div class="skills-group">
+          <p class="skills-note" data-i18n="progLangsTitle">Here are the programming languages I'm familiar with...</p>
+          <ul class="pill-list" aria-label="Programming languages">
+            <li class="pill" data-i18n="langCplusplus">C++</li>
+            <li class="pill" data-i18n="langPython">Python</li>
+            <li class="pill" data-i18n="langJava">Java</li>
+            <li class="pill" data-i18n="langSwift">Swift</li>
+            <li class="pill" data-i18n="langWeb">HTML / CSS / JS</li>
+            <li class="pill" data-i18n="langPhp">PHP</li>
+            <li class="pill" data-i18n="langCsharp">C#</li>
+            <li class="pill" data-i18n="langC">C</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-note" data-i18n="spokenTitle">As for spoken languages, I know...</p>
+          <ul class="pill-list" aria-label="Spoken languages">
+            <li class="pill" data-i18n="spokenEnglish">English</li>
+            <li class="pill" data-i18n="spokenMandarin">Mandarin</li>
+            <li class="pill" data-i18n="spokenJapanese">Japanese</li>
+            <li class="pill" data-i18n="spokenKorean">Korean</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-note" data-i18n="toolsTitle">And here are the programming tools I use...</p>
+          <ul class="pill-list" aria-label="Programming tools">
+            <li class="pill" data-i18n="toolVscode">VS Code</li>
+            <li class="pill" data-i18n="toolXcode">Xcode</li>
+            <li class="pill" data-i18n="toolIntellij">IntelliJ</li>
+            <li class="pill" data-i18n="toolEclipse">Eclipse</li>
+            <li class="pill" data-i18n="toolUnity">Unity</li>
+            <li class="pill" data-i18n="toolGithub">GitHub</li>
+          </ul>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-note" data-i18n="creativeToolsTitle">As well as some creative and productivity tools!</p>
+          <ul class="pill-list" aria-label="Creative and productivity tools">
+            <li class="pill" data-i18n="toolPs">Adobe Photoshop</li>
+            <li class="pill" data-i18n="toolAi">Adobe Illustrator</li>
+            <li class="pill" data-i18n="toolLr">Adobe Lightroom</li>
+            <li class="pill" data-i18n="toolFigma">Figma</li>
+            <li class="pill" data-i18n="toolCanva">Canva</li>
+            <li class="pill" data-i18n="toolProcreate">Procreate</li>
+            <li class="pill" data-i18n="toolCapcut">CapCut</li>
+            <li class="pill" data-i18n="toolNotion">Notion</li>
+            <li class="pill" data-i18n="toolDrive">Google Drive</li>
+          </ul>
+        </div>
+      </div>
+      <div class="skills-col">
+        <h2 data-i18n="educationTitle">Education</h2>
+        <ul class="edu-list">
+          <li>
+            <div class="edu-item">
+              <a class="edu-icon" aria-label="Columbia University" href="https://www.columbia.edu/" target="_blank"
+                rel="noreferrer">
+                <img src="assets/columbialogo.png" alt="Columbia University logo" />
+              </a>
+              <div>
+                <div class="edu-title" data-i18n="edu1Title">Your University / School</div>
+                <div class="edu-meta" data-i18n="edu1Meta">Your program • 20XX–20XX</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="edu-item">
+              <a class="edu-icon" aria-label="UC Santa Barbara" href="https://www.ucsb.edu/" target="_blank"
+                rel="noreferrer">
+                <img src="assets/ucsblogo.png" alt="UC Santa Barbara logo" />
+              </a>
+              <div>
+                <div class="edu-title" data-i18n="edu2Title">Exchange / Program / Bootcamp</div>
+                <div class="edu-meta" data-i18n="edu2Meta">Focus area • 20XX</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <h3 class="edu-courses-title" data-i18n="coursesTitle">Key Courses</h3>
+        <ul class="pill-list course-list" aria-label="Key courses" data-course-list>
+          <li class="pill" data-i18n="course1">Data Structures & Algorithms</li>
+          <li class="pill" data-i18n="course2">Operating Systems</li>
+          <li class="pill" data-i18n="course3">Computer Networks</li>
+          <li class="pill" data-i18n="course4">Databases</li>
+          <li class="pill" data-i18n="course5">Machine Learning</li>
+          <li class="pill" data-i18n="course6">Computer Graphics</li>
+          <li class="pill" data-i18n="course7">Human-Computer Interaction</li>
+          <li class="pill" data-i18n="course8">Linear Algebra</li>
+          <li class="pill" data-i18n="course9">Probability & Statistics</li>
+          <li class="pill" data-i18n="course10">Distributed Systems</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+    <footer class="behind-footer" aria-label="Links">
+    <a class="neumorphic-circle footer-icon-link" href="https://github.com/rickeychiu" target="_blank" rel="noreferrer"
+      aria-label="GitHub" title="GitHub">
+      <img src="assets/githublogo.png" alt="" class="footer-icon-image" />
+    </a>
+    <a class="neumorphic-circle" href="https://www.linkedin.com/in/rickeychiu/" target="_blank" rel="noreferrer"
+      aria-label="LinkedIn" title="LinkedIn">
+      in
+    </a>
+    <a class="neumorphic-circle" href="mailto:you@example.com" aria-label="Email" title="Email">
+      @
+    </a>
+  </footer>
+
+  <div id="viewport">
+    <div id="map"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

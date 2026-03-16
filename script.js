@@ -263,6 +263,16 @@ const translations = {
 
 const STORAGE_KEY = "preferredLanguage";
 const TYPE_SPEED = 45; // ms per character for smooth typing
+const COURSEWORK_PATHS = ["data/coursework.json", "data/coursework.jsom"];
+const PROGRAMMING_PROJECTS_PATH = "data/programmingprojects.json";
+const RECOMMENDED_PROJECT_TAGS = [
+  "PyTorch",
+  "Machine Learning",
+  "UI",
+  "Git",
+  "Computer Graphics",
+  "Python",
+];
 let caretHideTimeout = null;
 
 function setCaretState(caretEl, { visible, blinking }) {
@@ -366,6 +376,8 @@ function initLanguagePicker() {
 }
 
 initLanguagePicker();
+initCoursework();
+initProgrammingProjects();
 
 // Keep available for debugging in the console.
 window.setLanguage = setLanguage;
@@ -378,4 +390,535 @@ function applyStaticTranslations(strings) {
       el.textContent = strings[key];
     }
   });
+}
+
+async function initCoursework() {
+  const courseList = document.querySelector("[data-course-list]");
+  if (!courseList) return;
+
+  const coursework = await loadCoursework();
+  if (!Array.isArray(coursework) || coursework.length === 0) return;
+
+  courseList.replaceChildren(
+    ...coursework
+      .map((course) => createCoursePill(course))
+      .filter(Boolean)
+  );
+}
+
+async function loadCoursework() {
+  for (const path of COURSEWORK_PATHS) {
+    try {
+      const response = await fetch(path);
+      if (!response.ok) continue;
+
+      const coursework = await response.json();
+      if (Array.isArray(coursework)) return coursework;
+    } catch (error) {
+      // Ignore and continue so a typoed extension can still fall back.
+    }
+  }
+
+  console.warn("Unable to load coursework data from expected files.");
+  return null;
+}
+
+function createCoursePill(course) {
+  const name = typeof course?.Name === "string" ? course.Name.trim() : "";
+  if (!name) return null;
+
+  const item = document.createElement("li");
+  item.className = "pill";
+  item.textContent = name;
+
+  if (typeof course?.Code === "string" && course.Code.trim()) {
+    item.title = course.Code.trim();
+  }
+
+  return item;
+}
+
+async function initProgrammingProjects() {
+  const projectsRoot = document.querySelector("[data-programming-projects]");
+  const searchForm = document.querySelector("[data-project-search-form]");
+  const searchInput = document.querySelector("[data-project-search-input]");
+  const suggestionPills = document.querySelector("[data-project-suggestion-pills]");
+  const resultsHeader = document.querySelector("[data-project-results-header]");
+  const resultsTitle = document.querySelector("[data-project-results-title]");
+  const gallery = document.querySelector("[data-project-gallery]");
+  const sliderTrack = document.querySelector("[data-project-slider-track]");
+
+  if (
+    !projectsRoot ||
+    !searchForm ||
+    !searchInput ||
+    !suggestionPills ||
+    !resultsHeader ||
+    !resultsTitle ||
+    !gallery ||
+    !sliderTrack
+  ) {
+    return;
+  }
+
+  const [projects, coursework] = await Promise.all([
+    loadProgrammingProjects(),
+    loadCoursework(),
+  ]);
+  const items =
+    Array.isArray(projects) && projects.length > 0
+      ? projects
+      : getFallbackProgrammingProjects();
+  const suggestionValues = getProjectSuggestionValues(items, coursework);
+
+  renderProjectGallery(sliderTrack, items);
+
+  const syncFromQuery = () => {
+    const query = new URLSearchParams(window.location.search).get("q") ?? "";
+    searchInput.value = query;
+    renderProjectSuggestionPills(suggestionPills, suggestionValues, query);
+    renderProjectSearchResults({
+      query,
+      projects: items,
+      projectsRoot,
+      gallery,
+      resultsHeader,
+      resultsTitle,
+    });
+  };
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = searchInput.value.trim();
+    const url = new URL(window.location.href);
+
+    if (query) {
+      url.searchParams.set("q", query);
+    } else {
+      url.searchParams.delete("q");
+    }
+
+    window.history.replaceState({}, "", url);
+    syncFromQuery();
+  });
+
+  searchInput.addEventListener("input", () => {
+    renderProjectSuggestionPills(suggestionPills, suggestionValues, searchInput.value);
+  });
+
+  searchInput.addEventListener("search", () => {
+    if (searchInput.value) return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete("q");
+    window.history.replaceState({}, "", url);
+    syncFromQuery();
+  });
+
+  syncFromQuery();
+}
+
+async function loadProgrammingProjects() {
+  try {
+    const response = await fetch(PROGRAMMING_PROJECTS_PATH);
+    if (!response.ok) return null;
+
+    const projects = await response.json();
+    return Array.isArray(projects) ? projects : null;
+  } catch (error) {
+    console.warn("Unable to load programming projects data.", error);
+    return null;
+  }
+}
+
+function getFallbackProgrammingProjects() {
+  return [
+    {
+      title: "Placeholder Project One",
+      image: "assets/hero-bg.jpg",
+      description:
+        "A full-stack experiment placeholder for showcasing product thinking, engineering tradeoffs, and a clean UI pass.",
+      links: {
+        project: "https://example.com/placeholder-project-one",
+        github: "https://github.com/rickeychiu/placeholder-project-one",
+      },
+      tags: ["Full Stack", "Product Design", "JavaScript", "UI", "Frontend"],
+    },
+    {
+      title: "Placeholder Project Two",
+      image: "",
+      description:
+        "A research-flavored prototype placeholder for ML workflows, iteration logs, and lessons learned from building under uncertainty.",
+      links: {
+        github: "https://github.com/rickeychiu/placeholder-project-two",
+      },
+      tags: ["PyTorch", "Machine Learning", "Neural Networks", "NLP", "Research"],
+    },
+    {
+      title: "Placeholder Project Three",
+      image: "",
+      description:
+        "A tools-oriented placeholder for scripting, automation, and the kind of utility project that starts small and becomes part of the workflow.",
+      links: {},
+      tags: ["Python", "Automation", "Developer Tools", "Systems", "Git"],
+    },
+  ];
+}
+
+function createProgrammingProjectCard(project, index) {
+  const article = document.createElement("article");
+  article.className = "neumo-card project-card";
+
+  const grid = document.createElement("div");
+  grid.className = "card-grid";
+
+  const text = document.createElement("div");
+  text.className = "card-text";
+
+  const title = document.createElement("h2");
+  title.textContent = getProjectField(project, "title", `Placeholder Project ${index + 1}`);
+
+  const description = document.createElement("p");
+  description.textContent = getProjectField(
+    project,
+    "description",
+    "Project description placeholder. Add a short explanation of what you built, why it matters, and what stack you used."
+  );
+
+  const tagList = createProjectTagList(getProjectTags(project));
+
+  text.append(title);
+  if (tagList) text.append(tagList);
+  text.append(description);
+
+  const actionRow = createProjectActionRow(project);
+  if (actionRow) text.append(actionRow);
+
+  const media = document.createElement("div");
+  media.className = "card-media";
+
+  const image = getProjectField(project, "image", "");
+  if (image) {
+    const frame = document.createElement("div");
+    frame.className = "project-image-frame";
+
+    const img = document.createElement("img");
+    img.className = "project-image";
+    img.src = image;
+    img.alt = `${title.textContent} preview`;
+
+    img.addEventListener("error", () => {
+      frame.replaceChildren(createProjectPlaceholder(title.textContent));
+    });
+
+    frame.appendChild(img);
+    media.appendChild(frame);
+  } else {
+    media.appendChild(createProjectPlaceholder(title.textContent));
+  }
+
+  grid.append(text, media);
+  article.appendChild(grid);
+  return article;
+}
+
+function createProjectTagList(tags) {
+  if (!tags.length) return null;
+
+  const list = document.createElement("ul");
+  list.className = "pill-list project-tag-list";
+  list.setAttribute("aria-label", "Project tags");
+
+  for (const tag of tags) {
+    const item = document.createElement("li");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "pill project-tag-button";
+    button.textContent = tag;
+    button.addEventListener("click", () => {
+      const input = document.querySelector("[data-project-search-input]");
+      if (!input) return;
+      input.value = tag;
+      input.form?.requestSubmit();
+    });
+    item.appendChild(button);
+    list.appendChild(item);
+  }
+
+  return list;
+}
+
+function createProjectActionRow(project) {
+  const actions = getProjectActions(project);
+  if (!actions.length) return null;
+
+  const row = document.createElement("div");
+  row.className = "project-action-row";
+  row.setAttribute("data-count", String(actions.length));
+
+  for (const action of actions) {
+    const link = document.createElement("a");
+    link.className = "neumo-button";
+    link.href = action.href;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.append(createProjectActionIcon(action.type), createProjectActionLabel(action.label));
+    row.appendChild(link);
+  }
+
+  return row;
+}
+
+function createProjectActionIcon(type) {
+  if (type === "github") {
+    const image = document.createElement("img");
+    image.className = "project-action-icon";
+    image.src = "assets/githublogo.png";
+    image.alt = "";
+    return image;
+  }
+
+  const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  icon.setAttribute("viewBox", "0 0 24 24");
+  icon.setAttribute("aria-hidden", "true");
+  icon.classList.add("project-action-icon", "project-action-icon-svg");
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute(
+    "d",
+    "M7 3h7l5 5v13a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm6 1.5V9h4.5"
+  );
+  path.setAttribute("fill", "none");
+  path.setAttribute("stroke", "currentColor");
+  path.setAttribute("stroke-width", "1.8");
+  path.setAttribute("stroke-linecap", "round");
+  path.setAttribute("stroke-linejoin", "round");
+  icon.appendChild(path);
+
+  return icon;
+}
+
+function createProjectActionLabel(text) {
+  const label = document.createElement("span");
+  label.textContent = text;
+  return label;
+}
+
+function createProjectPlaceholder(title) {
+  const placeholder = document.createElement("div");
+  placeholder.className = "media-placeholder project-placeholder";
+
+  const label = document.createElement("span");
+  label.textContent = `${title} image`;
+  placeholder.appendChild(label);
+
+  return placeholder;
+}
+
+function getProjectField(project, field, fallback) {
+  const value = project?.[field];
+  return typeof value === "string" && value.trim() ? value.trim() : fallback;
+}
+
+function getProjectTags(project) {
+  if (!Array.isArray(project?.tags)) return [];
+
+  return project.tags
+    .filter((tag) => typeof tag === "string")
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
+
+function getProjectActions(project) {
+  const links = project?.links ?? {};
+  const projectHref = normalizeProjectLink(links.project);
+  const githubHref = normalizeProjectLink(links.github ?? project?.github);
+  const actions = [];
+
+  if (projectHref) {
+    actions.push({
+      href: projectHref,
+      label: "Project",
+      type: "project",
+    });
+  }
+
+  if (githubHref) {
+    actions.push({
+      href: githubHref,
+      label: "Github",
+      type: "github",
+    });
+  }
+
+  return actions;
+}
+
+function normalizeProjectLink(value) {
+  return typeof value === "string" && value.trim() ? value.trim() : "";
+}
+
+function getProjectSuggestionValues(projects, coursework) {
+  const suggestions = new Set();
+
+  for (const tag of RECOMMENDED_PROJECT_TAGS) suggestions.add(tag);
+
+  for (const project of projects) {
+    suggestions.add(getProjectField(project, "title", ""));
+    for (const tag of getProjectTags(project)) suggestions.add(tag);
+  }
+
+  if (Array.isArray(coursework)) {
+    for (const course of coursework) {
+      if (!Array.isArray(course?.Skills)) continue;
+      for (const skill of course.Skills) {
+        if (typeof skill === "string" && skill.trim()) {
+          suggestions.add(skill.trim());
+        }
+      }
+    }
+  }
+
+  return Array.from(suggestions)
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function renderProjectSuggestionPills(container, suggestions, query) {
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleSuggestions = normalizedQuery
+    ? suggestions
+        .filter((value) => value.toLowerCase().includes(normalizedQuery))
+        .slice(0, 8)
+    : RECOMMENDED_PROJECT_TAGS;
+
+  container.replaceChildren(
+    ...visibleSuggestions.map((value) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "project-suggestion-pill";
+      button.textContent = value;
+      button.addEventListener("click", () => {
+        const input = document.querySelector("[data-project-search-input]");
+        if (!input) return;
+        input.value = value;
+        input.form?.requestSubmit();
+      });
+      return button;
+    })
+  );
+}
+
+function renderProjectSearchResults({
+  query,
+  projects,
+  projectsRoot,
+  gallery,
+  resultsHeader,
+  resultsTitle,
+}) {
+  const normalizedQuery = query.trim().toLowerCase();
+  const filters = parseProjectSearchFilters(query);
+
+  if (!normalizedQuery || filters.length === 0) {
+    resultsHeader.hidden = true;
+    projectsRoot.hidden = true;
+    gallery.hidden = false;
+    projectsRoot.replaceChildren();
+    return;
+  }
+
+  const matches = projects.filter((project) => {
+    const haystack = [
+      getProjectField(project, "title", ""),
+      getProjectField(project, "description", ""),
+      ...getProjectTags(project),
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return filters.every((filter) => haystack.includes(filter));
+  });
+
+  resultsTitle.textContent = `Results for "${query}"`;
+  resultsHeader.hidden = false;
+  gallery.hidden = true;
+  projectsRoot.hidden = false;
+
+  if (matches.length === 0) {
+    const emptyState = document.createElement("article");
+    emptyState.className = "neumo-card project-empty-state";
+
+    const text = document.createElement("div");
+    text.className = "card-text";
+
+    const title = document.createElement("h2");
+    title.textContent = "No projects matched that search.";
+
+    const description = document.createElement("p");
+    description.textContent =
+      "Try broader filters or comma-separated tags like PyTorch, UI, Git, graphics, or machine learning.";
+
+    text.append(title, description);
+    emptyState.appendChild(text);
+    projectsRoot.replaceChildren(emptyState);
+    return;
+  }
+
+  projectsRoot.replaceChildren(
+    ...matches.map((project, index) => createProgrammingProjectCard(project, index))
+  );
+}
+
+function renderProjectGallery(track, projects) {
+  const cards = projects.map((project, index) =>
+    createProjectSliderCard(project, index)
+  );
+  const duplicateCards = projects.map((project, index) =>
+    createProjectSliderCard(project, index)
+  );
+
+  track.replaceChildren(...cards, ...duplicateCards);
+}
+
+function createProjectSliderCard(project, index) {
+  const card = document.createElement("article");
+  card.className = "project-slider-card";
+
+  const media = getProjectField(project, "image", "");
+  if (media) {
+    const image = document.createElement("img");
+    image.className = "project-slider-image";
+    image.src = media;
+    image.alt = `${getProjectField(project, "title", `Placeholder Project ${index + 1}`)} preview`;
+    image.addEventListener("error", () => {
+      card.prepend(createProjectPlaceholder(getProjectField(project, "title", `Placeholder Project ${index + 1}`)));
+      image.remove();
+    });
+    card.appendChild(image);
+  } else {
+    card.appendChild(
+      createProjectPlaceholder(getProjectField(project, "title", `Placeholder Project ${index + 1}`))
+    );
+  }
+
+  const body = document.createElement("div");
+  body.className = "project-slider-body";
+
+  const title = document.createElement("h3");
+  title.textContent = getProjectField(project, "title", `Placeholder Project ${index + 1}`);
+
+  const tags = document.createElement("p");
+  tags.className = "project-slider-tags";
+  tags.textContent = getProjectTags(project).slice(0, 3).join(" • ") || "Placeholder tags";
+
+  body.append(title, tags);
+  card.appendChild(body);
+  return card;
+}
+
+function parseProjectSearchFilters(query) {
+  return query
+    .split(",")
+    .map((filter) => filter.trim().toLowerCase())
+    .filter(Boolean);
 }

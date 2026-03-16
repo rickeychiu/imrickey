@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Projects | rickeychiu</title>
+    <meta
+      name="description"
+      content="Programming projects by Rickey Chiu, rendered from project data."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="neumorphic-circle project-floating-back" href="index.html" aria-label="Back to home" title="Back to home">
+      ←
+    </a>
+
+    <nav class="lang-picker" aria-label="Language">
+      <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
+        EN
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
+        中
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
+        日
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
+        한
+      </button>
+    </nav>
+
+    <header class="hero project-hero-compact" style="--hero-bg-url: url('assets/hero-bg.jpg')">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <section class="project-hero-panel" aria-label="Programming projects">
+        <div class="project-page-heading">
+          <div>
+            <p class="project-kicker">Portfolio Index</p>
+            <h1>programming projects.</h1>
+            <p class="project-subtitle">
+              Search by title, description, or stack tags tied to your coursework skills.
+            </p>
+          </div>
+        </div>
+
+        <form class="project-search-shell" data-project-search-form>
+          <label class="project-search-label" for="project-search">Find a project</label>
+          <div class="project-search-row">
+            <input
+              id="project-search"
+              class="project-search-input"
+              name="q"
+              type="search"
+              placeholder="Try: pytorch, ui, graphics"
+              autocomplete="off"
+              data-project-search-input
+            />
+            <button class="project-search-button" type="submit" aria-label="Search projects">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="project-suggestion-row" data-project-suggestion-pills></div>
+        </form>
+      </section>
+    </header>
+
+    <main class="content project-page-shell project-page-top">
+      <section class="project-results-header" aria-live="polite" data-project-results-header hidden>
+        <p class="project-results-kicker">Search Mode</p>
+        <h2 data-project-results-title>Results for ""</h2>
+      </section>
+
+      <section class="project-gallery-card neumo-card" aria-label="Project gallery" data-project-gallery>
+        <div class="project-gallery-copy">
+          <p class="project-results-kicker">Browse</p>
+          <h2>take a closer look.</h2>
+        </div>
+        <div class="project-slider-window">
+          <div class="project-slider-track" data-project-slider-track></div>
+        </div>
+      </section>
+
+      <section
+        class="blocks project-blocks"
+        aria-label="Programming project results"
+        data-programming-projects
+        hidden
+      ></section>
+    </main>
+
+    <footer class="behind-footer" aria-label="Links">
+      <a
+        class="neumorphic-circle footer-icon-link"
+        href="https://github.com/rickeychiu"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <img src="assets/githublogo.png" alt="" class="footer-icon-image" />
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="https://www.linkedin.com/in/rickeychiu/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+      >
+        in
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="mailto:you@example.com"
+        aria-label="Email"
+        title="Email"
+      >
+        @
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

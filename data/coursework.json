@@ -1,0 +1,124 @@
+[
+    {
+        "Name": "Natural Language Processing",
+        "Code": "COMS 4705",
+        "Description": "Computational approaches to the analysis, understanding, and generation of natural language text at scale. Emphasis on machine learning techniques for NLP, including deep learning and large language models. Applications may include information extraction, sentiment analysis, question answering, summarization, machine translation, and conversational AI. Discussion of datasets, benchmarking and evaluation, interpretability, and ethical considerations.",
+        "Skills": [
+            "Large Language Models (LLMs)",
+            "Prompt Engineering",
+            "Vector Semantics",
+            "Neural Networks",
+            "Transformer Architectures",
+            "Reinforcement Learning (RL)",
+            "Agentic AI",
+            "Artificial Intelligence (AI)",
+            "Fine-Tuning",
+            "Pre-Training",
+            "Natural Language Processing (NLP)",
+            "PyTorch",
+            "Python",
+            "Linear Algebra"
+        ]
+    },
+    {
+        "Name": "Deep Learning for Computer Graphics",
+        "Code": "COMS 3168",
+        "Description": "Covers deep learning basics, related math and the fundamental theory and application of AI algorithms that are popular in the field of computer graphics. Develops GPU programming skills while implementing concepts using deep learning APIs on a GPU cluster, like using Convolutional neural networks (CNNs) for colorizing black and white movies.",
+        "Skills": [
+            "Deep Learning",
+            "PyTorch",
+            "Machine Learning (ML)",
+            "Neural Networks",
+            "Cloud Computing",
+            "CUDA",
+            "cuDNN",
+            "TensorFlow",
+            "Fine-Tuning",
+            "Convolutional Neural Networks (CNNs)",
+            "Natural Language Processing (NLP)",
+            "Transformer Architectures",
+            "Reinforcement Learning (RL)",
+            "Image Denoising",
+            "Neural Rendering",
+            "Computer Graphics",
+            "Autonomous Driving",
+            "Linear Algebra"
+        ]
+    },
+    {
+        "Name": "User Interface Design",
+        "Code": "COMS 4170",
+        "Description": "Introduction to the theory and practice of computer user interface design, emphasizing the software design of graphical user interfaces. Topics include basic interaction devices and techniques, human factors, interaction styles, dialogue design, and software infrastructure. ",
+        "Skills": [
+            "Usability Heuristics",
+            "User Interface (UI)",
+            "User Experience (UX)",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Flask",
+            "Bootstrap",
+            "Python",
+            "Software Engineering",
+            "Front-end",
+            "Server Hosting"
+        ]
+    },
+    {
+        "Name": "Systems Programming",
+        "Code": "COMS 3157",
+        "Description": "C programming language and Unix systems programming. Also covers Git, Make, TCP/IP networking basics, C++ fundamentals.",
+        "Skills": [
+            "Git",
+            "Version Control",
+            "C",
+            "C++",
+            "Unix",
+            "Sockets API",
+            "HTTP",
+            "TCP",
+            "Server Hosting",
+            "Back-end",
+            "Computer Systems"
+        ]
+    },
+    {
+        "Name": "Data Structures & Algorithms",
+        "Code": "COMS 3134",
+        "Description": "Data types and structures: arrays, stacks, singly and doubly linked lists, queues, trees, sets, and graphs. Programming techniques for processing such structures: sorting and searching, hashing, garbage collection. Storage management. Rudiments of the analysis of algorithms. ",
+        "Skills": [
+            "Data Structures",
+            "Algorithms",
+            "Object Oriented Programming (OOP)",
+            "Java",
+            "C++",
+            "Dynamic Programming (DP)",
+            "Runtime Analysis"
+        ]
+    },
+    {
+        "Name": "Discrete Mathematics",
+        "Code": "COMS 3203",
+        "Description": "Logic and formal proofs, sequences and summation, mathematical induction, binomial coefficients, elements of finite probability, recurrence relations, equivalence relations and partial orderings, and topics in graph theory (including isomorphism, traversability, planarity, and colorings).",
+        "Skills": [
+            "Proofs",
+            "Induction",
+            "Probability",
+            "Graph Theory",
+            "Discrete Math"
+        ]
+    },
+    {
+        "Name": "Fundamental of Computer Systems",
+        "Code": "CSEE 3827",
+        "Description": "Fundamentals of computer organization and digital logic. Boolean algebra, Karnaugh maps, basic gates and components, flipflops and latches, counters and state machines, basics of combinational and sequential digital design. Assembly language, instruction sets, ALU’s, single-cycle and multi-cycle processor design, introduction to pipelined processors, caches, and virtual memory.",
+        "Skills": [
+            "Computer Systems",
+            "Boolean Algebra",
+            "Hardware",
+            "Computer Architecture",
+            "Caches",
+            "Computer Design"
+        ]
+    }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Simple Learning Models for Computer Graphics: Classifiers and Regressors",
+    "image": "assets/dlcg-project1.png",
+    "description": "Explored how simple machine learning models can solve graphics-oriented problems by building a K-means image segmentation pipeline and training models to predict optimal Tic-Tac-Toe moves. The project focused on feature engineering, cross-validation, and comparing model behavior across classification and regression tasks.",
+    "links": {
+      "project": "assets/pdfs/simplelearningmodelsforCG.pdf",
+      "github": "https://github.com/rickeychiu/dlcg-project1"
+    },
+    "tags": ["Computer Graphics", "PyTorch", "Python", "Deep Learning", "Artificial Intelligence (AI)", "Machine Learning (ML)"]
+  },
+  {
+    "title": "Placeholder Project Two",
+    "image": "",
+    "description": "A research-flavored prototype placeholder for ML workflows, iteration logs, and lessons learned from building under uncertainty.",
+    "links": {
+      "github": "https://github.com/rickeychiu/placeholder-project-two"
+    },
+    "tags": ["PyTorch", "Machine Learning", "Neural Networks", "NLP", "Research"]
+  },
+  {
+    "title": "Placeholder Project Three",
+    "image": "",
+    "description": "A tools-oriented placeholder for scripting, automation, and the kind of utility project that starts small and becomes part of the workflow.",
+    "links": {},
+    "tags": ["Python", "Automation", "Developer Tools", "Systems", "Git"]
+  }
+]
