@@ -4,7 +4,7 @@ const translations = {
     subtitle: "i like to create things.",
     intro:
       "Whether it be terraforming blocky landscapes, optimizing cell segmentation models, or making company websites for startups in Tokyo, I enjoy exploring the space where software engineering, artificial intelligence, and interactive media meet.",
-    progTitle: "Programming & Academic Projects",
+    progTitle: "Programming Projects & Research",
     progDesc:
       "Anything from full-stack iOS apps to research papers. Half-baked prototypes, tools, anything nice.",
     progCta: "Open projects",
@@ -64,6 +64,25 @@ const translations = {
     toolCapcut: "CapCut",
     toolNotion: "Notion",
     toolDrive: "Google Drive",
+    projectIndexKicker: "Portfolio Index",
+    projectPageTitle: "programming projects.",
+    projectPageSubtitle: "Search by title, description, or stack tags tied to my skills.",
+    projectSearchLabel: "Find a project",
+    projectSearchPlaceholder: "ex. Python, Deep Learning, Full-Stack",
+    projectSearchButton: "Search projects",
+    projectSearchingFor: "Searching for",
+    projectBrowse: "Browse",
+    projectGalleryTitle: "take a closer look.",
+    projectViewAll: "View All",
+    projectNoResultsTitle: "No projects matched that search.",
+    projectNoResultsDesc:
+      "Try broader filters or comma-separated tags like PyTorch, UI, Git, graphics, or machine learning.",
+    projectAllProjects: "All Projects",
+    projectActionOpen: "Open Project",
+    projectActionWebsite: "Open Website",
+    projectActionGithub: "View Code in GitHub",
+    projectBackProjects: "Back to programming projects",
+    projectBackHome: "Back to home",
   },
   zh: {
     title: "嗨, 我是楷翔。",
@@ -128,6 +147,24 @@ const translations = {
     toolCapcut: "CapCut",
     toolNotion: "Notion",
     toolDrive: "Google Drive",
+    projectIndexKicker: "作品索引",
+    projectPageTitle: "程式專案。",
+    projectPageSubtitle: "可依標題、描述或與我的技能相關的技術標籤搜尋。",
+    projectSearchLabel: "尋找專案",
+    projectSearchPlaceholder: "例如：Python、深度學習、全端",
+    projectSearchButton: "搜尋專案",
+    projectSearchingFor: "正在搜尋",
+    projectBrowse: "瀏覽",
+    projectGalleryTitle: "來仔細看看。",
+    projectViewAll: "查看全部",
+    projectNoResultsTitle: "找不到符合的專案。",
+    projectNoResultsDesc: "試試更寬泛的篩選詞，或用逗號分隔像 PyTorch、UI、Git、圖形學、機器學習等標籤。",
+    projectAllProjects: "全部專案",
+    projectActionOpen: "開啟專案",
+    projectActionWebsite: "開啟網站",
+    projectActionGithub: "查看 GitHub 程式碼",
+    projectBackProjects: "回到程式專案頁",
+    projectBackHome: "返回首頁",
   },
   ja: {
     title: "リッキーです。",
@@ -193,6 +230,24 @@ const translations = {
     toolCapcut: "CapCut",
     toolNotion: "Notion",
     toolDrive: "Google Drive",
+    projectIndexKicker: "ポートフォリオ索引",
+    projectPageTitle: "プログラミング作品。",
+    projectPageSubtitle: "タイトル、説明、または自分のスキルに結びつく技術タグで検索できます。",
+    projectSearchLabel: "作品を探す",
+    projectSearchPlaceholder: "例: Python、Deep Learning、Full-Stack",
+    projectSearchButton: "作品を検索",
+    projectSearchingFor: "検索中",
+    projectBrowse: "閲覧",
+    projectGalleryTitle: "もう少し詳しく。",
+    projectViewAll: "すべて見る",
+    projectNoResultsTitle: "一致する作品はありませんでした。",
+    projectNoResultsDesc: "より広いキーワードや、PyTorch、UI、Git、グラフィックス、機械学習のようなタグをカンマ区切りで試してください。",
+    projectAllProjects: "すべての作品",
+    projectActionOpen: "プロジェクトを開く",
+    projectActionWebsite: "サイトを開く",
+    projectActionGithub: "GitHub のコードを見る",
+    projectBackProjects: "プログラミング作品へ戻る",
+    projectBackHome: "ホームへ戻る",
   },
   ko: {
     title: "안녕, 릭키입니다.",
@@ -258,6 +313,24 @@ const translations = {
     toolCapcut: "CapCut",
     toolNotion: "Notion",
     toolDrive: "Google Drive",
+    projectIndexKicker: "포트폴리오 인덱스",
+    projectPageTitle: "프로그래밍 프로젝트.",
+    projectPageSubtitle: "제 기술과 연결된 제목, 설명, 스택 태그로 프로젝트를 검색할 수 있습니다.",
+    projectSearchLabel: "프로젝트 찾기",
+    projectSearchPlaceholder: "예: Python, Deep Learning, Full-Stack",
+    projectSearchButton: "프로젝트 검색",
+    projectSearchingFor: "검색 중",
+    projectBrowse: "둘러보기",
+    projectGalleryTitle: "조금 더 자세히 보기.",
+    projectViewAll: "전체 보기",
+    projectNoResultsTitle: "검색과 일치하는 프로젝트가 없습니다.",
+    projectNoResultsDesc: "더 넓은 키워드나 PyTorch, UI, Git, 그래픽스, 머신러닝 같은 태그를 쉼표로 구분해 시도해 보세요.",
+    projectAllProjects: "전체 프로젝트",
+    projectActionOpen: "프로젝트 열기",
+    projectActionWebsite: "웹사이트 열기",
+    projectActionGithub: "GitHub 코드 보기",
+    projectBackProjects: "프로그래밍 프로젝트로 돌아가기",
+    projectBackHome: "홈으로 돌아가기",
   },
 };
 
@@ -266,14 +339,16 @@ const TYPE_SPEED = 45; // ms per character for smooth typing
 const COURSEWORK_PATHS = ["data/coursework.json", "data/coursework.jsom"];
 const PROGRAMMING_PROJECTS_PATH = "data/programmingprojects.json";
 const RECOMMENDED_PROJECT_TAGS = [
-  "PyTorch",
-  "Machine Learning",
-  "UI",
-  "Git",
   "Computer Graphics",
-  "Python",
+  "User Interface (UI)",
+  "Machine Learning (ML)",
+  "Software Engineering",
+  "Research",
 ];
+const MAX_PROJECT_SUGGESTIONS = 5;
+let activeLanguage = "en";
 let caretHideTimeout = null;
+let programmingProjectsState = null;
 
 function setCaretState(caretEl, { visible, blinking }) {
   if (!caretEl) return;
@@ -323,6 +398,7 @@ function normalizeLanguage(rawLang) {
 async function setLanguage(lang, { persist = true } = {}) {
   const normalized = normalizeLanguage(lang);
   const strings = translations[normalized] ?? translations.en;
+  activeLanguage = normalized;
 
   const titleTextEl =
     document.querySelector("#hero-title .typewriter-text") ||
@@ -357,6 +433,7 @@ async function setLanguage(lang, { persist = true } = {}) {
 
   // update all other translatable text nodes
   applyStaticTranslations(strings);
+  rerenderProgrammingProjects();
 
   if (persist) localStorage.setItem(STORAGE_KEY, normalized);
 }
@@ -388,6 +465,30 @@ function applyStaticTranslations(strings) {
     if (!key) return;
     if (typeof strings[key] === "string") {
       el.textContent = strings[key];
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-placeholder");
+    if (!key) return;
+    if (typeof strings[key] === "string") {
+      el.setAttribute("placeholder", strings[key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria-label");
+    if (!key) return;
+    if (typeof strings[key] === "string") {
+      el.setAttribute("aria-label", strings[key]);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-title");
+    if (!key) return;
+    if (typeof strings[key] === "string") {
+      el.setAttribute("title", strings[key]);
     }
   });
 }
@@ -440,21 +541,25 @@ function createCoursePill(course) {
 
 async function initProgrammingProjects() {
   const projectsRoot = document.querySelector("[data-programming-projects]");
+  const backButton = document.querySelector(".project-floating-back");
   const searchForm = document.querySelector("[data-project-search-form]");
   const searchInput = document.querySelector("[data-project-search-input]");
   const suggestionPills = document.querySelector("[data-project-suggestion-pills]");
+  const viewAllButton = document.querySelector("[data-project-view-all]");
   const resultsHeader = document.querySelector("[data-project-results-header]");
-  const resultsTitle = document.querySelector("[data-project-results-title]");
+  const resultsFilters = document.querySelector("[data-project-results-filters]");
   const gallery = document.querySelector("[data-project-gallery]");
   const sliderTrack = document.querySelector("[data-project-slider-track]");
 
   if (
     !projectsRoot ||
+    !backButton ||
     !searchForm ||
     !searchInput ||
     !suggestionPills ||
+    !viewAllButton ||
     !resultsHeader ||
-    !resultsTitle ||
+    !resultsFilters ||
     !gallery ||
     !sliderTrack
   ) {
@@ -470,12 +575,18 @@ async function initProgrammingProjects() {
       ? projects
       : getFallbackProgrammingProjects();
   const suggestionValues = getProjectSuggestionValues(items, coursework);
-
-  renderProjectGallery(sliderTrack, items);
-
+  cachedProjectSuggestionValues = suggestionValues;
   const syncFromQuery = () => {
     const query = new URLSearchParams(window.location.search).get("q") ?? "";
     searchInput.value = query;
+    const hasActiveSearch = Boolean(query.trim());
+    backButton.href = hasActiveSearch ? "programmingprojects.html" : "index.html";
+    backButton.setAttribute(
+      "aria-label",
+      getCurrentStrings()[hasActiveSearch ? "projectBackProjects" : "projectBackHome"]
+    );
+    backButton.title = getCurrentStrings()[hasActiveSearch ? "projectBackProjects" : "projectBackHome"];
+    renderProjectGallery(sliderTrack, items);
     renderProjectSuggestionPills(suggestionPills, suggestionValues, query);
     renderProjectSearchResults({
       query,
@@ -483,9 +594,17 @@ async function initProgrammingProjects() {
       projectsRoot,
       gallery,
       resultsHeader,
-      resultsTitle,
+      resultsFilters,
     });
   };
+  programmingProjectsState = { syncFromQuery };
+
+  viewAllButton.addEventListener("click", () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set("q", "*");
+    window.history.replaceState({}, "", url);
+    syncFromQuery();
+  });
 
   searchForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -504,6 +623,13 @@ async function initProgrammingProjects() {
 
   searchInput.addEventListener("input", () => {
     renderProjectSuggestionPills(suggestionPills, suggestionValues, searchInput.value);
+
+    if (searchInput.value.trim()) return;
+
+    const url = new URL(window.location.href);
+    url.searchParams.delete("q");
+    window.history.replaceState({}, "", url);
+    syncFromQuery();
   });
 
   searchInput.addEventListener("search", () => {
@@ -534,11 +660,12 @@ function getFallbackProgrammingProjects() {
   return [
     {
       title: "Placeholder Project One",
-      image: "assets/hero-bg.jpg",
+      image: "assets/images/hero-bg.jpg",
       description:
         "A full-stack experiment placeholder for showcasing product thinking, engineering tradeoffs, and a clean UI pass.",
       links: {
         project: "https://example.com/placeholder-project-one",
+        website: "",
         github: "https://github.com/rickeychiu/placeholder-project-one",
       },
       tags: ["Full Stack", "Product Design", "JavaScript", "UI", "Frontend"],
@@ -549,6 +676,7 @@ function getFallbackProgrammingProjects() {
       description:
         "A research-flavored prototype placeholder for ML workflows, iteration logs, and lessons learned from building under uncertainty.",
       links: {
+        website: "",
         github: "https://github.com/rickeychiu/placeholder-project-two",
       },
       tags: ["PyTorch", "Machine Learning", "Neural Networks", "NLP", "Research"],
@@ -558,7 +686,9 @@ function getFallbackProgrammingProjects() {
       image: "",
       description:
         "A tools-oriented placeholder for scripting, automation, and the kind of utility project that starts small and becomes part of the workflow.",
-      links: {},
+      links: {
+        website: "",
+      },
       tags: ["Python", "Automation", "Developer Tools", "Systems", "Git"],
     },
   ];
@@ -573,9 +703,10 @@ function createProgrammingProjectCard(project, index) {
 
   const text = document.createElement("div");
   text.className = "card-text";
+  const titleValue = getLocalizedProjectTitle(project, `Placeholder Project ${index + 1}`);
 
   const title = document.createElement("h2");
-  title.textContent = getProjectField(project, "title", `Placeholder Project ${index + 1}`);
+  title.textContent = titleValue;
 
   const description = document.createElement("p");
   description.textContent = getProjectField(
@@ -604,7 +735,7 @@ function createProgrammingProjectCard(project, index) {
     const img = document.createElement("img");
     img.className = "project-image";
     img.src = image;
-    img.alt = `${title.textContent} preview`;
+    img.alt = `${titleValue} preview`;
 
     img.addEventListener("error", () => {
       frame.replaceChildren(createProjectPlaceholder(title.textContent));
@@ -635,10 +766,7 @@ function createProjectTagList(tags) {
     button.className = "pill project-tag-button";
     button.textContent = tag;
     button.addEventListener("click", () => {
-      const input = document.querySelector("[data-project-search-input]");
-      if (!input) return;
-      input.value = tag;
-      input.form?.requestSubmit();
+      appendProjectSearchToken(tag);
     });
     item.appendChild(button);
     list.appendChild(item);
@@ -661,7 +789,7 @@ function createProjectActionRow(project) {
     link.href = action.href;
     link.target = "_blank";
     link.rel = "noreferrer";
-    link.append(createProjectActionIcon(action.type), createProjectActionLabel(action.label));
+    link.append(createProjectActionLabel(action.label), createProjectActionIcon(action.type));
     row.appendChild(link);
   }
 
@@ -669,32 +797,17 @@ function createProjectActionRow(project) {
 }
 
 function createProjectActionIcon(type) {
-  if (type === "github") {
+  if (type === "github" || type === "project" || type === "website") {
     const image = document.createElement("img");
     image.className = "project-action-icon";
-    image.src = "assets/githublogo.png";
+    image.src =
+      type === "github"
+        ? "assets/images/githublogo.png"
+        : "assets/images/linktoexternalsite.png";
     image.alt = "";
     return image;
   }
-
-  const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  icon.setAttribute("viewBox", "0 0 24 24");
-  icon.setAttribute("aria-hidden", "true");
-  icon.classList.add("project-action-icon", "project-action-icon-svg");
-
-  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute(
-    "d",
-    "M7 3h7l5 5v13a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm6 1.5V9h4.5"
-  );
-  path.setAttribute("fill", "none");
-  path.setAttribute("stroke", "currentColor");
-  path.setAttribute("stroke-width", "1.8");
-  path.setAttribute("stroke-linecap", "round");
-  path.setAttribute("stroke-linejoin", "round");
-  icon.appendChild(path);
-
-  return icon;
+  return document.createElement("span");
 }
 
 function createProjectActionLabel(text) {
@@ -719,6 +832,28 @@ function getProjectField(project, field, fallback) {
   return typeof value === "string" && value.trim() ? value.trim() : fallback;
 }
 
+function getLocalizedProjectTitle(project, fallback = "") {
+  const title = project?.title;
+  if (typeof title === "string" && title.trim()) return title.trim();
+  if (title && typeof title === "object") {
+    const localized = title[activeLanguage] ?? title.en;
+    if (typeof localized === "string" && localized.trim()) return localized.trim();
+  }
+  return fallback;
+}
+
+function getProjectTitleValues(project) {
+  const title = project?.title;
+  if (typeof title === "string" && title.trim()) return [title.trim()];
+  if (title && typeof title === "object") {
+    return Object.values(title)
+      .filter((value) => typeof value === "string")
+      .map((value) => value.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 function getProjectTags(project) {
   if (!Array.isArray(project?.tags)) return [];
 
@@ -731,21 +866,30 @@ function getProjectTags(project) {
 function getProjectActions(project) {
   const links = project?.links ?? {};
   const projectHref = normalizeProjectLink(links.project);
+  const websiteHref = normalizeProjectLink(links.website);
   const githubHref = normalizeProjectLink(links.github ?? project?.github);
   const actions = [];
 
   if (projectHref) {
     actions.push({
       href: projectHref,
-      label: "Project",
+      label: getCurrentStrings().projectActionOpen,
       type: "project",
+    });
+  }
+
+  if (websiteHref) {
+    actions.push({
+      href: websiteHref,
+      label: getCurrentStrings().projectActionWebsite,
+      type: "website",
     });
   }
 
   if (githubHref) {
     actions.push({
       href: githubHref,
-      label: "Github",
+      label: getCurrentStrings().projectActionGithub,
       type: "github",
     });
   }
@@ -763,7 +907,6 @@ function getProjectSuggestionValues(projects, coursework) {
   for (const tag of RECOMMENDED_PROJECT_TAGS) suggestions.add(tag);
 
   for (const project of projects) {
-    suggestions.add(getProjectField(project, "title", ""));
     for (const tag of getProjectTags(project)) suggestions.add(tag);
   }
 
@@ -784,11 +927,11 @@ function getProjectSuggestionValues(projects, coursework) {
 }
 
 function renderProjectSuggestionPills(container, suggestions, query) {
-  const normalizedQuery = query.trim().toLowerCase();
-  const visibleSuggestions = normalizedQuery
+  const activeFilter = getActiveProjectSearchFilter(query);
+  const visibleSuggestions = activeFilter
     ? suggestions
-        .filter((value) => value.toLowerCase().includes(normalizedQuery))
-        .slice(0, 8)
+        .filter((value) => value.toLowerCase().includes(activeFilter))
+        .slice(0, MAX_PROJECT_SUGGESTIONS)
     : RECOMMENDED_PROJECT_TAGS;
 
   container.replaceChildren(
@@ -798,10 +941,7 @@ function renderProjectSuggestionPills(container, suggestions, query) {
       button.className = "project-suggestion-pill";
       button.textContent = value;
       button.addEventListener("click", () => {
-        const input = document.querySelector("[data-project-search-input]");
-        if (!input) return;
-        input.value = value;
-        input.form?.requestSubmit();
+        appendProjectSearchToken(value);
       });
       return button;
     })
@@ -814,35 +954,42 @@ function renderProjectSearchResults({
   projectsRoot,
   gallery,
   resultsHeader,
-  resultsTitle,
+  resultsFilters,
 }) {
   const normalizedQuery = query.trim().toLowerCase();
+  const showAll = normalizedQuery === "*";
   const filters = parseProjectSearchFilters(query);
 
-  if (!normalizedQuery || filters.length === 0) {
+  if (!showAll && (!normalizedQuery || filters.length === 0)) {
     resultsHeader.hidden = true;
     projectsRoot.hidden = true;
     gallery.hidden = false;
+    resultsFilters.replaceChildren();
     projectsRoot.replaceChildren();
     return;
   }
 
-  const matches = projects.filter((project) => {
-    const haystack = [
-      getProjectField(project, "title", ""),
-      getProjectField(project, "description", ""),
-      ...getProjectTags(project),
-    ]
-      .join(" ")
-      .toLowerCase();
+  const matches = showAll
+    ? projects
+    : projects.filter((project) => {
+        const haystack = [
+          ...getProjectTitleValues(project),
+          getProjectField(project, "description", ""),
+          ...getProjectTags(project),
+        ]
+          .join(" ")
+          .toLowerCase();
 
-    return filters.every((filter) => haystack.includes(filter));
-  });
+        return filters.every((filter) => haystack.includes(filter));
+      });
 
-  resultsTitle.textContent = `Results for "${query}"`;
   resultsHeader.hidden = false;
   gallery.hidden = true;
   projectsRoot.hidden = false;
+  renderProjectResultsFilters(
+    resultsFilters,
+    showAll ? [getCurrentStrings().projectAllProjects] : filters
+  );
 
   if (matches.length === 0) {
     const emptyState = document.createElement("article");
@@ -852,11 +999,10 @@ function renderProjectSearchResults({
     text.className = "card-text";
 
     const title = document.createElement("h2");
-    title.textContent = "No projects matched that search.";
+    title.textContent = getCurrentStrings().projectNoResultsTitle;
 
     const description = document.createElement("p");
-    description.textContent =
-      "Try broader filters or comma-separated tags like PyTorch, UI, Git, graphics, or machine learning.";
+    description.textContent = getCurrentStrings().projectNoResultsDesc;
 
     text.append(title, description);
     emptyState.appendChild(text);
@@ -866,6 +1012,17 @@ function renderProjectSearchResults({
 
   projectsRoot.replaceChildren(
     ...matches.map((project, index) => createProgrammingProjectCard(project, index))
+  );
+}
+
+function renderProjectResultsFilters(container, filters) {
+  container.replaceChildren(
+    ...filters.map((filter) => {
+      const item = document.createElement("span");
+      item.className = "project-results-filter";
+      item.textContent = filter;
+      return item;
+    })
   );
 }
 
@@ -883,29 +1040,45 @@ function renderProjectGallery(track, projects) {
 function createProjectSliderCard(project, index) {
   const card = document.createElement("article");
   card.className = "project-slider-card";
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
 
   const media = getProjectField(project, "image", "");
+  const titleValue = getLocalizedProjectTitle(project, `Placeholder Project ${index + 1}`);
+
+  const openProjectResult = () => {
+    const input = document.querySelector("[data-project-search-input]");
+    if (!input) return;
+    input.value = titleValue;
+    input.form?.requestSubmit();
+  };
+
+  card.addEventListener("click", openProjectResult);
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openProjectResult();
+  });
+
   if (media) {
     const image = document.createElement("img");
     image.className = "project-slider-image";
     image.src = media;
-    image.alt = `${getProjectField(project, "title", `Placeholder Project ${index + 1}`)} preview`;
+    image.alt = `${titleValue} preview`;
     image.addEventListener("error", () => {
-      card.prepend(createProjectPlaceholder(getProjectField(project, "title", `Placeholder Project ${index + 1}`)));
+      card.prepend(createProjectPlaceholder(titleValue));
       image.remove();
     });
     card.appendChild(image);
   } else {
-    card.appendChild(
-      createProjectPlaceholder(getProjectField(project, "title", `Placeholder Project ${index + 1}`))
-    );
+    card.appendChild(createProjectPlaceholder(titleValue));
   }
 
   const body = document.createElement("div");
   body.className = "project-slider-body";
 
   const title = document.createElement("h3");
-  title.textContent = getProjectField(project, "title", `Placeholder Project ${index + 1}`);
+  title.textContent = titleValue;
 
   const tags = document.createElement("p");
   tags.className = "project-slider-tags";
@@ -921,4 +1094,70 @@ function parseProjectSearchFilters(query) {
     .split(",")
     .map((filter) => filter.trim().toLowerCase())
     .filter(Boolean);
+}
+
+function buildProjectSearchValue(currentValue, nextToken) {
+  return buildProjectSearchValueWithOptions(currentValue, nextToken);
+}
+
+function buildProjectSearchValueWithOptions(currentValue, nextToken, options = {}) {
+  const { appendDelimiter = false } = options;
+  const cleanToken = nextToken.trim();
+  if (!cleanToken) return currentValue;
+
+  const endsWithComma = currentValue.trimEnd().endsWith(",");
+  const rawParts = currentValue.split(",");
+  const committed = rawParts
+    .slice(0, endsWithComma ? rawParts.length : -1)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const active = endsWithComma ? "" : (rawParts[rawParts.length - 1] ?? "").trim();
+  const normalizedToken = cleanToken.toLowerCase();
+  const existing = [...committed.map((part) => part.toLowerCase())];
+  if (active) existing.push(active.toLowerCase());
+
+  if (existing.includes(normalizedToken)) {
+    const resolved = [...committed, ...(active ? [active] : [])].join(", ");
+    return appendDelimiter && resolved ? `${resolved}, ` : resolved;
+  }
+
+  const nextParts = [...committed, cleanToken];
+  const resolved = nextParts.join(", ");
+  return appendDelimiter && resolved ? `${resolved}, ` : resolved;
+}
+
+function getActiveProjectSearchFilter(query) {
+  const parts = query.split(",");
+  return parts[parts.length - 1].trim().toLowerCase();
+}
+
+function appendProjectSearchToken(value) {
+  const input = document.querySelector("[data-project-search-input]");
+  if (!input) return;
+
+  const nextValue = buildProjectSearchValueWithOptions(input.value, value, {
+    appendDelimiter: true,
+  });
+  input.value = nextValue;
+  input.focus();
+  renderProjectSuggestionPills(
+    document.querySelector("[data-project-suggestion-pills]"),
+    getProjectSuggestionValuesCache(),
+    input.value
+  );
+}
+
+function getCurrentStrings() {
+  return translations[activeLanguage] ?? translations.en;
+}
+
+function rerenderProgrammingProjects() {
+  if (!programmingProjectsState?.syncFromQuery) return;
+  programmingProjectsState.syncFromQuery();
+}
+
+let cachedProjectSuggestionValues = [];
+
+function getProjectSuggestionValuesCache() {
+  return cachedProjectSuggestionValues;
 }

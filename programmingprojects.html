@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <a class="neumorphic-circle project-floating-back" href="index.html" aria-label="Back to home" title="Back to home">
+    <a class="neumorphic-circle project-floating-back" href="index.html" aria-label="Back" title="Back">
       ←
     </a>
 
@@ -30,34 +30,42 @@
       </button>
     </nav>
 
-    <header class="hero project-hero-compact" style="--hero-bg-url: url('assets/hero-bg.jpg')">
+    <header class="hero project-hero-compact" style="--hero-bg-url: url('assets/images/hero-bg.jpg')">
       <div class="hero-image-overlay"></div>
       <div class="hero-bg" aria-hidden="true"></div>
 
       <section class="project-hero-panel" aria-label="Programming projects">
         <div class="project-page-heading">
           <div>
-            <p class="project-kicker">Portfolio Index</p>
-            <h1>programming projects.</h1>
-            <p class="project-subtitle">
-              Search by title, description, or stack tags tied to your coursework skills.
+            <p class="project-kicker" data-i18n="projectIndexKicker">Portfolio Index</p>
+            <h1 data-i18n="projectPageTitle">programming projects.</h1>
+            <p class="project-subtitle" data-i18n="projectPageSubtitle">
+              Search by title, description, or stack tags tied to my skills.
             </p>
           </div>
         </div>
 
         <form class="project-search-shell" data-project-search-form>
-          <label class="project-search-label" for="project-search">Find a project</label>
+          <label class="project-search-label" for="project-search" data-i18n="projectSearchLabel">Find a project</label>
           <div class="project-search-row">
             <input
               id="project-search"
               class="project-search-input"
               name="q"
               type="search"
-              placeholder="Try: pytorch, ui, graphics"
+              placeholder="ex. Python, Deep Learning, Full-Stack"
+              data-i18n-placeholder="projectSearchPlaceholder"
               autocomplete="off"
               data-project-search-input
             />
-            <button class="project-search-button" type="submit" aria-label="Search projects">
+            <button
+              class="project-search-button"
+              type="submit"
+              aria-label="Search projects"
+              title="Search projects"
+              data-i18n-aria-label="projectSearchButton"
+              data-i18n-title="projectSearchButton"
+            >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"
@@ -72,17 +80,24 @@
 
     <main class="content project-page-shell project-page-top">
       <section class="project-results-header" aria-live="polite" data-project-results-header hidden>
-        <p class="project-results-kicker">Search Mode</p>
-        <h2 data-project-results-title>Results for ""</h2>
+        <div class="project-results-inline">
+          <p class="project-results-kicker" data-i18n="projectSearchingFor">Searching for</p>
+          <div class="project-results-filters" data-project-results-filters></div>
+        </div>
       </section>
 
       <section class="project-gallery-card neumo-card" aria-label="Project gallery" data-project-gallery>
         <div class="project-gallery-copy">
-          <p class="project-results-kicker">Browse</p>
-          <h2>take a closer look.</h2>
+          <p class="project-results-kicker" data-i18n="projectBrowse">Browse</p>
+          <h2 data-i18n="projectGalleryTitle">take a closer look.</h2>
         </div>
         <div class="project-slider-window">
           <div class="project-slider-track" data-project-slider-track></div>
+        </div>
+        <div class="project-gallery-actions">
+          <button class="project-view-all-button" type="button" data-project-view-all data-i18n="projectViewAll">
+            View All
+          </button>
         </div>
       </section>
 
@@ -103,7 +118,7 @@
         aria-label="GitHub"
         title="GitHub"
       >
-        <img src="assets/githublogo.png" alt="" class="footer-icon-image" />
+        <img src="assets/images/githublogo.png" alt="" class="footer-icon-image" />
       </a>
       <a
         class="neumorphic-circle"
