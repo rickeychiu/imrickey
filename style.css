@@ -410,6 +410,7 @@ body {
     0 10px 22px rgba(117, 131, 151, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.42);
   transition: transform 140ms ease, box-shadow 140ms ease, color 140ms ease;
+  white-space: nowrap;
 }
 
 .site-nav-link:hover,
@@ -546,6 +547,7 @@ body {
   font-weight: 650;
   cursor: pointer;
   transition: transform 140ms ease, box-shadow 140ms ease, color 140ms ease;
+  white-space: nowrap;
 }
 
 .project-suggestion-pill:hover {
@@ -768,6 +770,8 @@ body {
   width: 100%;
   height: 100%;
   cursor: pointer;
+  border-radius: inherit;
+  overflow: hidden;
 }
 
 .project-media-link img {
@@ -1298,6 +1302,38 @@ body {
   font-size-adjust: var(--font-adjust-body);
 }
 
+.skill-pill {
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease, color 140ms ease;
+}
+
+.skill-pill:hover {
+  transform: translateY(-1px);
+  color: var(--text);
+  box-shadow:
+    10px 10px 18px rgba(163, 177, 198, 0.28),
+    -10px -10px 18px rgba(255, 255, 255, 0.82);
+}
+
+.skill-pill:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
+.skill-pill-inset {
+  background: linear-gradient(145deg, #e1e6ee, #f6f8fb);
+  box-shadow:
+    inset 8px 8px 16px rgba(163, 177, 198, 0.24),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.78);
+}
+
+.skill-pill-inset:hover {
+  transform: none;
+  box-shadow:
+    inset 9px 9px 18px rgba(163, 177, 198, 0.26),
+    inset -9px -9px 18px rgba(255, 255, 255, 0.82);
+}
+
 .pill-list {
   margin: 0;
   padding: 0;
@@ -1401,6 +1437,49 @@ body {
   gap: 8px;
 }
 
+.coursework-card .card-grid {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.coursework-code {
+  margin: 0 0 12px;
+  color: rgba(20, 22, 26, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.coursework-image-frame {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(700px 220px at 78% 18%, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0) 56%),
+    linear-gradient(145deg, rgba(215, 226, 244, 0.92), rgba(245, 248, 252, 0.98));
+}
+
+.coursework-media-label {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+}
+
+.coursework-media-code {
+  color: rgba(20, 22, 26, 0.48);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 720;
+}
+
+.coursework-media-name {
+  letter-spacing: -0.03em;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  line-height: 1.08;
+}
+
 @media (max-width: 860px) {
   .skills-grid {
     grid-template-columns: 1fr;
@@ -1418,6 +1497,16 @@ body {
   top: 18px;
   right: 18px;
   z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lang-picker-trigger {
+  display: none;
+}
+
+.lang-picker-panel {
   display: flex;
   gap: 12px;
 }
@@ -1483,6 +1572,60 @@ body {
   }
 }
 
+@media (max-width: 860px) {
+  .site-nav-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    min-width: 220px;
+    max-width: min(calc(100vw - 36px), 280px);
+    padding: 14px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(246, 248, 251, 0.96), rgba(225, 230, 238, 0.96));
+    box-shadow:
+      16px 16px 32px rgba(163, 177, 198, 0.28),
+      -16px -16px 32px rgba(255, 255, 255, 0.84);
+    overflow: visible;
+  }
+
+  .site-nav-link {
+    width: 100%;
+    justify-content: center;
+    padding-inline: 14px;
+    font-size: 0.94rem;
+  }
+
+  .lang-picker {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .lang-picker-trigger {
+    display: grid;
+  }
+
+  .lang-picker-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(246, 248, 251, 0.96), rgba(225, 230, 238, 0.96));
+    box-shadow:
+      16px 16px 32px rgba(163, 177, 198, 0.28),
+      -16px -16px 32px rgba(255, 255, 255, 0.84);
+  }
+
+  .lang-picker:not(.is-open) .lang-picker-panel {
+    display: none;
+  }
+}
+
 /* --- Placeholder for your future draggable schematic --- */
 #viewport {
   height: 0;
@@ -1493,4 +1636,56 @@ body {
 
 #map {
   display: none;
+}
+
+@media (max-width: 640px) {
+  .project-search-shell {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-search-label {
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+  }
+
+  .project-search-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .project-search-input {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+
+  .project-search-button {
+    width: 100%;
+    height: 46px;
+    border-radius: 999px;
+  }
+
+  .project-suggestion-row {
+    gap: 8px;
+    flex-wrap: wrap;
+    overflow: visible;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+
+  .project-suggestion-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-suggestion-pill {
+    max-width: 100%;
+    font-size: 0.88rem;
+    padding: 8px 12px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .coursework-card .card-grid {
+    grid-template-columns: 1fr;
+  }
 }

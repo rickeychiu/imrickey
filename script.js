@@ -4,7 +4,7 @@ const translations = {
     subtitle: "i like to create things.",
     intro:
       "Whether it be terraforming blocky landscapes, optimizing cell segmentation models, or making company websites for startups in Tokyo, I enjoy exploring the space where software engineering, artificial intelligence, and interactive media meet.",
-    progTitle: "Programming Projects & Research",
+    progTitle: "Programming & Academic Projects",
     progDesc:
       "Anything from full-stack iOS apps to research papers. Half-baked prototypes, tools, anything nice.",
     progCta: "Open projects",
@@ -39,7 +39,9 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JavaScript",
+    langHtml: "HTML",
+    langCss: "CSS",
+    langJavascript: "JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -53,8 +55,8 @@ const translations = {
     toolXcode: "Xcode",
     toolIntellij: "IntelliJ",
     toolEclipse: "Eclipse",
-    toolUnity: "Unity",
-    toolGithub: "GitHub",
+    toolUnity: "Unity Game Engine",
+    toolGithub: "Git",
     toolPs: "Adobe Photoshop",
     toolAi: "Adobe Illustrator",
     toolLr: "Adobe Lightroom",
@@ -95,6 +97,13 @@ const translations = {
     creativeSliderKicker: "Gallery",
     creativeSliderTitle: "scroll sideways to explore.",
     creativeSliderHint: "A collection of anything I like working on or am proud of.",
+    courseworkPageTitle: "coursework.",
+    courseworkPageSubtitle: "Classes, projects, and the specific skills each course sharpened.",
+    courseworkAllCourses: "All Coursework",
+    courseworkResultsTitle: "course details.",
+    courseworkNoResultsTitle: "No coursework matched that search.",
+    courseworkNoResultsDesc: "Try a course title, code, or one of the course skills.",
+    courseworkBackHome: "Back to home",
   },
   zh: {
     title: "嗨, 我是楷翔。",
@@ -133,7 +142,9 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JavaScript",
+    langHtml: "HTML",
+    langCss: "CSS",
+    langJavascript: "JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -147,9 +158,8 @@ const translations = {
     toolXcode: "Xcode",
     toolIntellij: "IntelliJ",
     toolEclipse: "Eclipse",
-    toolUnity: "Unity",
-    toolGithub: "GitHub",
-    creativeTitle: "還有一些創意與生產力工具！",
+    toolUnity: "Unity 遊戲引擎",
+    toolGithub: "Git",
     toolPs: "Adobe Photoshop",
     toolAi: "Adobe Illustrator",
     toolLr: "Adobe Lightroom",
@@ -188,6 +198,13 @@ const translations = {
     creativeSliderKicker: "作品廊",
     creativeSliderTitle: "左右滑動來瀏覽。",
     creativeSliderHint: "收錄所有我喜歡投入、或自己覺得值得驕傲的作品。",
+    courseworkPageTitle: "課程。",
+    courseworkPageSubtitle: "上過的課、做過的作業，還有每門課真正磨練到的能力。",
+    courseworkAllCourses: "全部課程",
+    courseworkResultsTitle: "課程細節。",
+    courseworkNoResultsTitle: "找不到符合的課程。",
+    courseworkNoResultsDesc: "試試課名、課號，或課程技能標籤。",
+    courseworkBackHome: "返回首頁",
   },
   ja: {
     title: "リッキーです。",
@@ -227,7 +244,9 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JavaScript",
+    langHtml: "HTML",
+    langCss: "CSS",
+    langJavascript: "JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -241,9 +260,8 @@ const translations = {
     toolXcode: "Xcode",
     toolIntellij: "IntelliJ",
     toolEclipse: "Eclipse",
-    toolUnity: "Unity",
-    toolGithub: "GitHub",
-    creativeTitle: "クリエイティブ・生産性ツールは…",
+    toolUnity: "Unityゲームエンジン",
+    toolGithub: "Git",
     toolPs: "Adobe Photoshop",
     toolAi: "Adobe Illustrator",
     toolLr: "Adobe Lightroom",
@@ -283,6 +301,13 @@ const translations = {
     creativeSliderKicker: "ギャラリー",
     creativeSliderTitle: "横にスクロールして見ていく。",
     creativeSliderHint: "自分が取り組むのが好きなものや、誇りに思っているものを集めた作品集です。",
+    courseworkPageTitle: "履修科目。",
+    courseworkPageSubtitle: "授業ごとの内容、課題、そこから身についたスキル。",
+    courseworkAllCourses: "すべての科目",
+    courseworkResultsTitle: "授業の詳細。",
+    courseworkNoResultsTitle: "一致する授業はありませんでした。",
+    courseworkNoResultsDesc: "科目名、科目コード、またはスキルタグで探してみてください。",
+    courseworkBackHome: "ホームへ戻る",
   },
   ko: {
     title: "안녕, 릭키입니다.",
@@ -322,7 +347,9 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JavaScript",
+    langHtml: "HTML",
+    langCss: "CSS",
+    langJavascript: "JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -336,9 +363,8 @@ const translations = {
     toolXcode: "Xcode",
     toolIntellij: "IntelliJ",
     toolEclipse: "Eclipse",
-    toolUnity: "Unity",
-    toolGithub: "GitHub",
-    creativeTitle: "그리고 크리에이티브/생산성 도구는…",
+    toolUnity: "Unity 게임 엔진",
+    toolGithub: "Git",
     toolPs: "Adobe Photoshop",
     toolAi: "Adobe Illustrator",
     toolLr: "Adobe Lightroom",
@@ -378,6 +404,13 @@ const translations = {
     creativeSliderKicker: "갤러리",
     creativeSliderTitle: "옆으로 스크롤하며 둘러보기.",
     creativeSliderHint: "제가 좋아서 해온 작업이나 자랑스럽게 생각하는 것들을 모아 둔 컬렉션입니다.",
+    courseworkPageTitle: "수업 기록.",
+    courseworkPageSubtitle: "들었던 수업, 만든 결과물, 그리고 각 수업에서 다듬은 기술들.",
+    courseworkAllCourses: "전체 수업",
+    courseworkResultsTitle: "수업 상세.",
+    courseworkNoResultsTitle: "일치하는 수업이 없습니다.",
+    courseworkNoResultsDesc: "과목명, 과목 코드, 또는 스킬 태그로 다시 찾아보세요.",
+    courseworkBackHome: "홈으로 돌아가기",
   },
 };
 
@@ -396,13 +429,17 @@ const RECOMMENDED_PROJECT_TAGS = [
   "Software Engineering",
   "Research",
 ];
+const MOBILE_RECOMMENDED_PROJECT_TAGS = ["Git", "Python", "Swift", "UI"];
 const MAX_PROJECT_SUGGESTIONS = 5;
+const MAX_PROJECT_SUGGESTIONS_MOBILE = 3;
 let activeLanguage = "en";
 let caretHideTimeout = null;
 let aboutMeState = null;
 let programmingProjectsState = null;
 let creativeProjectsState = null;
+let courseworkPageState = null;
 let siteMenuState = null;
+let languagePickerState = null;
 
 function setCaretState(caretEl, { visible, blinking }) {
   if (!caretEl) return;
@@ -487,8 +524,10 @@ async function setLanguage(lang, { persist = true } = {}) {
 
   // update all other translatable text nodes
   applyStaticTranslations(strings);
+  rerenderLanguagePicker();
   rerenderSiteMenu();
   rerenderAboutMe();
+  rerenderCourseworkPage();
   rerenderProgrammingProjects();
   rerenderCreativeProjects();
 
@@ -496,6 +535,7 @@ async function setLanguage(lang, { persist = true } = {}) {
 }
 
 function initLanguagePicker() {
+  initResponsiveLanguagePicker();
   initFloatingSiteMenu();
 
   const buttons = document.querySelectorAll("[data-lang]");
@@ -509,6 +549,59 @@ function initLanguagePicker() {
   const stored = localStorage.getItem(STORAGE_KEY);
   const preferred = stored || (navigator.languages?.[0] ?? navigator.language);
   setLanguage(preferred, { persist: Boolean(stored) });
+}
+
+function initResponsiveLanguagePicker() {
+  const picker = document.querySelector(".lang-picker");
+  if (!picker || picker.querySelector(".lang-picker-trigger")) {
+    languagePickerState = languagePickerState ?? { picker: document.querySelector(".lang-picker") };
+    return;
+  }
+
+  const trigger = document.createElement("button");
+  trigger.type = "button";
+  trigger.className = "neumorphic-circle lang-picker-trigger";
+  trigger.setAttribute("aria-expanded", "false");
+  trigger.setAttribute("aria-label", "Open languages");
+  trigger.textContent = "EN";
+
+  const panel = document.createElement("div");
+  panel.className = "lang-picker-panel";
+  panel.hidden = true;
+
+  const existingButtons = Array.from(picker.querySelectorAll("[data-lang]"));
+  existingButtons.forEach((button) => panel.appendChild(button));
+  picker.append(trigger, panel);
+
+  const setOpen = (open) => {
+    picker.classList.toggle("is-open", open);
+    trigger.setAttribute("aria-expanded", String(open));
+    panel.hidden = !open;
+  };
+
+  trigger.addEventListener("click", () => {
+    setOpen(!picker.classList.contains("is-open"));
+  });
+
+  panel.addEventListener("click", (event) => {
+    if (event.target.closest("[data-lang]")) {
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!picker.classList.contains("is-open")) return;
+    if (picker.contains(event.target)) return;
+    setOpen(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setOpen(false);
+    }
+  });
+
+  languagePickerState = { picker, trigger, panel, setOpen };
 }
 
 function saveHomeScrollPosition() {
@@ -540,7 +633,7 @@ function initHomeScrollPersistence() {
 
     document
       .querySelectorAll(
-        'a[href="programmingprojects.html"], a[href="creativeprojects.html"], a[href="aboutme.html"]'
+        'a[href="programmingprojects.html"], a[href="creativeprojects.html"], a[href="aboutme.html"], a[href="coursework.html"]'
       )
       .forEach((link) => {
         link.addEventListener("click", () => {
@@ -616,8 +709,10 @@ async function loadAboutMeContent() {
 
 initLanguagePicker();
 initHomeScrollPersistence();
+initHomeInteractiveLinks();
 initAboutMe();
 initCoursework();
+initCourseworkPage();
 initProgrammingProjects();
 initCreativeProjects();
 
@@ -743,6 +838,17 @@ function rerenderSiteMenu() {
   applyStaticTranslations(getCurrentStrings());
 }
 
+function rerenderLanguagePicker() {
+  if (!languagePickerState?.trigger?.isConnected) return;
+  const labels = {
+    en: "EN",
+    zh: "中",
+    ja: "日",
+    ko: "한",
+  };
+  languagePickerState.trigger.textContent = labels[activeLanguage] ?? "EN";
+}
+
 async function initCoursework() {
   const courseList = document.querySelector("[data-course-list]");
   if (!courseList) return;
@@ -779,14 +885,161 @@ function createCoursePill(course) {
   if (!name) return null;
 
   const item = document.createElement("li");
-  item.className = "pill";
+  item.className = "pill skill-pill skill-pill-link";
   item.textContent = name;
+  item.tabIndex = 0;
+  item.setAttribute("role", "link");
 
   if (typeof course?.Code === "string" && course.Code.trim()) {
     item.title = course.Code.trim();
   }
 
+  const openCoursePage = () => {
+    navigateFromHome(createSearchUrl("coursework.html", name));
+  };
+
+  item.addEventListener("click", openCoursePage);
+  item.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openCoursePage();
+  });
+
   return item;
+}
+
+function initHomeInteractiveLinks() {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  if (currentPath !== "index.html") return;
+
+  document.querySelectorAll("[data-project-query]").forEach((pill) => {
+    pill.tabIndex = 0;
+    pill.setAttribute("role", "link");
+
+    const query = pill.getAttribute("data-project-query");
+    if (!query) return;
+
+    const openSearch = () => {
+      navigateFromHome(createSearchUrl("programmingprojects.html", query));
+    };
+
+    pill.addEventListener("click", openSearch);
+    pill.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      openSearch();
+    });
+  });
+}
+
+function createSearchUrl(path, query) {
+  const url = new URL(path, window.location.href);
+  if (query?.trim()) {
+    url.searchParams.set("q", query.trim());
+  }
+  return `${url.pathname.split("/").pop()}${url.search}`;
+}
+
+function navigateFromHome(href) {
+  saveHomeScrollPosition();
+  markHomeScrollRestore();
+  navigateToUrl(href);
+}
+
+function navigateToUrl(href) {
+  window.location.href = href;
+}
+
+async function initCourseworkPage() {
+  const pageRoot = document.querySelector("[data-coursework-page]");
+  if (!pageRoot) return;
+
+  const backButton = document.querySelector(".project-floating-back");
+  const title = document.querySelector("[data-coursework-title]");
+  const subtitle = document.querySelector("[data-coursework-subtitle]");
+  const resultsTitle = document.querySelector("[data-coursework-results-title]");
+  const filtersRoot = document.querySelector("[data-coursework-filters]");
+  const blocksRoot = document.querySelector("[data-coursework-blocks]");
+
+  if (!backButton || !title || !subtitle || !resultsTitle || !filtersRoot || !blocksRoot) return;
+
+  const coursework = await loadCoursework();
+  if (!Array.isArray(coursework)) return;
+
+  const render = () => {
+    const strings = getCurrentStrings();
+    const params = new URLSearchParams(window.location.search);
+    const query = (params.get("q") || "").trim();
+    const filters = query
+      .split(",")
+      .map((filter) => filter.trim())
+      .filter(Boolean);
+    const normalizedFilters = filters.map((filter) => filter.toLowerCase());
+
+    backButton.href = "index.html";
+    backButton.setAttribute("aria-label", strings.courseworkBackHome);
+    backButton.title = strings.courseworkBackHome;
+
+    title.textContent = strings.courseworkPageTitle;
+    subtitle.textContent = strings.courseworkPageSubtitle;
+    resultsTitle.textContent = strings.courseworkResultsTitle;
+
+    const matches =
+      !normalizedFilters.length
+        ? coursework
+        : coursework.filter((course) => {
+            const haystack = [
+              course.Name,
+              course.Code,
+              course.Description,
+              ...(Array.isArray(course.Skills) ? course.Skills : []),
+            ]
+              .join(" ")
+              .toLowerCase();
+            return normalizedFilters.every((filter) => haystack.includes(filter));
+          });
+
+    renderProjectResultsFilters(
+      filtersRoot,
+      filters.length ? filters : [strings.courseworkAllCourses]
+    );
+
+    if (!matches.length) {
+      const emptyState = document.createElement("article");
+      emptyState.className = "neumo-card project-empty-state";
+
+      const text = document.createElement("div");
+      text.className = "card-text";
+
+      const emptyTitle = document.createElement("h2");
+      emptyTitle.textContent = strings.courseworkNoResultsTitle;
+
+      const emptyDesc = document.createElement("p");
+      emptyDesc.textContent = strings.courseworkNoResultsDesc;
+
+      text.append(emptyTitle, emptyDesc);
+      emptyState.appendChild(text);
+      blocksRoot.replaceChildren(emptyState);
+      return;
+    }
+
+    blocksRoot.replaceChildren(...matches.map((course) => createCourseworkCard(course)));
+  };
+
+  pageRoot.addEventListener("click", (event) => {
+    const skillButton = event.target.closest("[data-course-skill]");
+    if (!skillButton) return;
+    const skill = skillButton.getAttribute("data-course-skill");
+    if (!skill) return;
+    navigateToUrl(createSearchUrl("programmingprojects.html", skill));
+  });
+
+  backButton.addEventListener("click", () => {
+    markHomeScrollRestore();
+  });
+
+  courseworkPageState = { render };
+  render();
 }
 
 async function initProgrammingProjects() {
@@ -1010,6 +1263,10 @@ async function initProgrammingProjects() {
     url.searchParams.delete("q");
     window.history.replaceState({}, "", url);
     syncFromQuery();
+  });
+
+  window.addEventListener("resize", () => {
+    renderProjectSuggestionPills(suggestionPills, suggestionValues, searchInput.value);
   });
 
   runProjectSlider();
@@ -1477,6 +1734,92 @@ function createProgrammingProjectCard(project, index) {
   return article;
 }
 
+function createCourseworkCard(course) {
+  const article = document.createElement("article");
+  article.className = "neumo-card project-card coursework-card";
+
+  const grid = document.createElement("div");
+  grid.className = "card-grid";
+
+  const text = document.createElement("div");
+  text.className = "card-text";
+
+  const title = document.createElement("h2");
+  title.textContent = course?.Name || "Course";
+
+  const code = document.createElement("p");
+  code.className = "coursework-code";
+  code.textContent = course?.Code || "";
+
+  const description = document.createElement("p");
+  description.textContent =
+    typeof course?.Description === "string" && course.Description.trim()
+      ? course.Description.trim()
+      : "Course description coming soon.";
+
+  const tags = createCourseSkillTagList(
+    Array.isArray(course?.Skills) ? course.Skills : []
+  );
+
+  text.append(title);
+  if (code.textContent) text.append(code);
+  if (tags) text.append(tags);
+  text.append(description);
+
+  const media = document.createElement("div");
+  media.className = "card-media";
+  media.appendChild(createCourseworkMedia(course));
+
+  grid.append(text, media);
+  article.appendChild(grid);
+  return article;
+}
+
+function createCourseSkillTagList(skills) {
+  const filtered = skills
+    .filter((skill) => typeof skill === "string" && skill.trim())
+    .map((skill) => skill.trim());
+
+  if (!filtered.length) return null;
+
+  const list = document.createElement("ul");
+  list.className = "pill-list project-tag-list";
+  list.setAttribute("aria-label", "Course skills");
+
+  filtered.forEach((skill) => {
+    const item = document.createElement("li");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "pill project-tag-button";
+    button.textContent = skill;
+    button.setAttribute("data-course-skill", skill);
+    item.appendChild(button);
+    list.appendChild(item);
+  });
+
+  return list;
+}
+
+function createCourseworkMedia(course) {
+  const frame = document.createElement("div");
+  frame.className = "project-image-frame coursework-image-frame";
+
+  const label = document.createElement("div");
+  label.className = "coursework-media-label";
+
+  const code = document.createElement("span");
+  code.className = "coursework-media-code";
+  code.textContent = course?.Code || "Course";
+
+  const name = document.createElement("span");
+  name.className = "coursework-media-name";
+  name.textContent = course?.Name || "Coursework";
+
+  label.append(code, name);
+  frame.appendChild(label);
+  return frame;
+}
+
 function createProjectTagList(tags) {
   if (!tags.length) return null;
 
@@ -1742,12 +2085,15 @@ function getProjectSuggestionValues(projects, coursework) {
 }
 
 function renderProjectSuggestionPills(container, suggestions, query) {
+  const suggestionLimit = isNarrowViewport()
+    ? MAX_PROJECT_SUGGESTIONS_MOBILE
+    : MAX_PROJECT_SUGGESTIONS;
   const activeFilter = getActiveProjectSearchFilter(query);
   const visibleSuggestions = activeFilter
     ? suggestions
         .filter((value) => value.toLowerCase().includes(activeFilter))
-        .slice(0, MAX_PROJECT_SUGGESTIONS)
-    : RECOMMENDED_PROJECT_TAGS;
+        .slice(0, suggestionLimit)
+    : (isNarrowViewport() ? MOBILE_RECOMMENDED_PROJECT_TAGS : RECOMMENDED_PROJECT_TAGS);
 
   container.replaceChildren(
     ...visibleSuggestions.map((value) => {
@@ -1761,6 +2107,10 @@ function renderProjectSuggestionPills(container, suggestions, query) {
       return button;
     })
   );
+}
+
+function isNarrowViewport() {
+  return window.matchMedia("(max-width: 640px)").matches;
 }
 
 function renderProjectSearchResults({
@@ -1985,6 +2335,11 @@ function rerenderCreativeProjects() {
 function rerenderAboutMe() {
   if (!aboutMeState?.render) return;
   aboutMeState.render();
+}
+
+function rerenderCourseworkPage() {
+  if (!courseworkPageState?.render) return;
+  courseworkPageState.render();
 }
 
 let cachedProjectSuggestionValues = [];

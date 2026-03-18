@@ -11,7 +11,7 @@
     "links": {
       "project": "assets/pdfs/simplelearningmodelsforCG.pdf"
     },
-    "tags": ["Computer Graphics",  "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)",  "Python"]
+    "tags": ["Computer Graphics",  "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)",  "Python", "English"]
   },
   {
     "title": {
@@ -26,7 +26,7 @@
       "project": "assets/pdfs/Cell_Segmentation_Conference_Paper.pdf",
       "website": ""
     },
-    "tags": ["Machine Learning (ML)",  "Deep Learning", "Research", "Artificial Intelligence (AI)", "Biomedical", "Python", "PyTorch"]
+    "tags": ["Machine Learning (ML)",  "Deep Learning", "Research", "Artificial Intelligence (AI)", "Biomedical", "Python", "PyTorch", "English"]
   },
   {
     "title": {
@@ -40,7 +40,7 @@
     "links": {
       "website": "https://b-after.co.jp/"
     },
-    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git"]
+    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git", "Japanese"]
   },
   {
     "title": {
@@ -54,7 +54,7 @@
     "links": {
       "github": "https://github.com/rickeychiu/skyore"
     },
-    "tags": ["Unity Game Engine", "C#", "Game Development", "Animation", "Game Design", "ShaderLab", "Git"]
+    "tags": ["Unity Game Engine", "C#", "Game Development", "Animation", "Game Design", "ShaderLab", "Git", "English"]
   },
   {
     "title": {
@@ -68,7 +68,7 @@
     "links": {
       "github": "https://github.com/rickeychiu/lhs-courseplanner"
     },
-    "tags": ["Software Engineering", "Full-Stack", "Swift", "App Development", "User Interface (UI)", "Git"]
+    "tags": ["Software Engineering", "Full-Stack", "Swift", "App Development", "User Interface (UI)", "Git", "English"]
   },
   {
     "title": {
@@ -82,7 +82,7 @@
     "links": {
       "website": "https://s2nm.jp/"
     },
-    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git"]
+    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git", "Japanese"]
   },
   {
     "title": {
@@ -96,7 +96,7 @@
     "links": {
       "github": "https://github.com/rickeychiu/budgeteer"
     },
-    "tags": ["FinTech", "Full-Stack", "React", "Tailwind CSS", "Node.js", "Hackathon", "Git"]
+    "tags": ["FinTech", "Full-Stack", "React", "Tailwind CSS", "Node.js", "Hackathon", "Git", "English"]
   },
   {
     "title": {
@@ -110,6 +110,6 @@
     "links": {
       "github": "https://github.com/rickeychiu/imrickey"
     },
-    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git"]
+    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git", "English", "Mandarin", "Japanese", "Korean"]
   }
 ]

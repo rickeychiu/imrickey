@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coursework | rickeychiu</title>
+    <meta
+      name="description"
+      content="Coursework by Rickey Chiu, with detailed descriptions and related skills."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="neumorphic-circle project-floating-back" href="index.html" aria-label="Back" title="Back">
+      ←
+    </a>
+
+    <nav class="lang-picker" aria-label="Language">
+      <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
+        EN
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
+        中
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
+        日
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
+        한
+      </button>
+    </nav>
+
+    <header class="hero project-hero-compact" style="--hero-bg-url: url('assets/images/hero-bg.jpg')">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <section class="project-hero-panel" aria-label="Coursework">
+        <div class="project-page-heading">
+          <div>
+            <p class="project-kicker" data-i18n="projectIndexKicker">Portfolio Index</p>
+            <h1 data-coursework-title>coursework.</h1>
+            <p class="project-subtitle" data-coursework-subtitle>
+              Classes, projects, and the specific skills each course sharpened.
+            </p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="content project-page-shell project-page-top" data-coursework-page>
+      <section class="project-results-header" aria-live="polite">
+        <div class="project-results-inline">
+          <p class="project-results-kicker" data-coursework-results-title>course details.</p>
+          <div class="project-results-filters" data-coursework-filters></div>
+        </div>
+      </section>
+
+      <section
+        class="blocks project-blocks"
+        aria-label="Coursework details"
+        data-coursework-blocks
+      ></section>
+    </main>
+
+    <footer class="behind-footer" aria-label="Links">
+      <a
+        class="neumorphic-circle footer-icon-link"
+        href="https://github.com/rickeychiu"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <img src="assets/images/githublogo.png" alt="" class="footer-icon-image" />
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="https://www.linkedin.com/in/rickeychiu/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+      >
+        in
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="mailto:you@example.com"
+        aria-label="Email"
+        title="Email"
+      >
+        @
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
