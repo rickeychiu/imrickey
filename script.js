@@ -39,7 +39,7 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JS",
+    langWeb: "HTML / CSS / JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -68,7 +68,6 @@ const translations = {
     projectPageTitle: "programming projects.",
     projectPageSubtitle: "Search by title, description, or stack tags tied to my skills.",
     projectSearchLabel: "Find a project",
-    projectSearchPlaceholder: "ex. Python, Deep Learning, Full-Stack",
     projectSearchButton: "Search projects",
     projectSearchingFor: "Searching for",
     projectBrowse: "Browse",
@@ -83,6 +82,19 @@ const translations = {
     projectActionGithub: "View Code in GitHub",
     projectBackProjects: "Back to programming projects",
     projectBackHome: "Back to home",
+    navHome: "Home",
+    navProgramming: "Programming Projects",
+    navCreative: "Creative Projects",
+    navAbout: "About",
+    navMenuOpen: "Open navigation",
+    navMenuClose: "Close navigation",
+    creativePageKicker: "Portfolio Index",
+    creativePageTitle: "creative projects.",
+    creativePageSubtitle:
+      "Interactive media, photography, design experiments, and things that make more sense once you see them.",
+    creativeSliderKicker: "Gallery",
+    creativeSliderTitle: "scroll sideways to explore.",
+    creativeSliderHint: "A collection of anything I like working on or am proud of.",
   },
   zh: {
     title: "嗨, 我是楷翔。",
@@ -121,7 +133,7 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JS",
+    langWeb: "HTML / CSS / JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -151,7 +163,6 @@ const translations = {
     projectPageTitle: "程式專案。",
     projectPageSubtitle: "可依標題、描述或與我的技能相關的技術標籤搜尋。",
     projectSearchLabel: "尋找專案",
-    projectSearchPlaceholder: "例如：Python、深度學習、全端",
     projectSearchButton: "搜尋專案",
     projectSearchingFor: "正在搜尋",
     projectBrowse: "瀏覽",
@@ -165,6 +176,18 @@ const translations = {
     projectActionGithub: "查看 GitHub 程式碼",
     projectBackProjects: "回到程式專案頁",
     projectBackHome: "返回首頁",
+    navHome: "首頁",
+    navProgramming: "程式專案",
+    navCreative: "創意專案",
+    navAbout: "關於我",
+    navMenuOpen: "打開導覽選單",
+    navMenuClose: "關閉導覽選單",
+    creativePageKicker: "作品索引",
+    creativePageTitle: "創意專案。",
+    creativePageSubtitle: "互動媒體、攝影、設計實驗，以及那些必須親眼看見才更有感的作品。",
+    creativeSliderKicker: "作品廊",
+    creativeSliderTitle: "左右滑動來瀏覽。",
+    creativeSliderHint: "收錄所有我喜歡投入、或自己覺得值得驕傲的作品。",
   },
   ja: {
     title: "リッキーです。",
@@ -204,7 +227,7 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JS",
+    langWeb: "HTML / CSS / JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -234,7 +257,6 @@ const translations = {
     projectPageTitle: "プログラミング作品。",
     projectPageSubtitle: "タイトル、説明、または自分のスキルに結びつく技術タグで検索できます。",
     projectSearchLabel: "作品を探す",
-    projectSearchPlaceholder: "例: Python、Deep Learning、Full-Stack",
     projectSearchButton: "作品を検索",
     projectSearchingFor: "検索中",
     projectBrowse: "閲覧",
@@ -248,6 +270,19 @@ const translations = {
     projectActionGithub: "GitHub のコードを見る",
     projectBackProjects: "プログラミング作品へ戻る",
     projectBackHome: "ホームへ戻る",
+    navHome: "ホーム",
+    navProgramming: "プログラミング作品",
+    navCreative: "クリエイティブ作品",
+    navAbout: "私について",
+    navMenuOpen: "ナビゲーションを開く",
+    navMenuClose: "ナビゲーションを閉じる",
+    creativePageKicker: "ポートフォリオ索引",
+    creativePageTitle: "クリエイティブ作品。",
+    creativePageSubtitle:
+      "インタラクティブメディア、写真、デザイン実験、そして実際に見たほうが伝わるものたち。",
+    creativeSliderKicker: "ギャラリー",
+    creativeSliderTitle: "横にスクロールして見ていく。",
+    creativeSliderHint: "自分が取り組むのが好きなものや、誇りに思っているものを集めた作品集です。",
   },
   ko: {
     title: "안녕, 릭키입니다.",
@@ -287,7 +322,7 @@ const translations = {
     langPython: "Python",
     langJava: "Java",
     langSwift: "Swift",
-    langWeb: "HTML / CSS / JS",
+    langWeb: "HTML / CSS / JavaScript",
     langPhp: "PHP",
     langCsharp: "C#",
     langC: "C",
@@ -317,7 +352,6 @@ const translations = {
     projectPageTitle: "프로그래밍 프로젝트.",
     projectPageSubtitle: "제 기술과 연결된 제목, 설명, 스택 태그로 프로젝트를 검색할 수 있습니다.",
     projectSearchLabel: "프로젝트 찾기",
-    projectSearchPlaceholder: "예: Python, Deep Learning, Full-Stack",
     projectSearchButton: "프로젝트 검색",
     projectSearchingFor: "검색 중",
     projectBrowse: "둘러보기",
@@ -331,13 +365,30 @@ const translations = {
     projectActionGithub: "GitHub 코드 보기",
     projectBackProjects: "프로그래밍 프로젝트로 돌아가기",
     projectBackHome: "홈으로 돌아가기",
+    navHome: "홈",
+    navProgramming: "프로그래밍 프로젝트",
+    navCreative: "크리에이티브 프로젝트",
+    navAbout: "소개",
+    navMenuOpen: "탐색 메뉴 열기",
+    navMenuClose: "탐색 메뉴 닫기",
+    creativePageKicker: "포트폴리오 인덱스",
+    creativePageTitle: "크리에이티브 프로젝트.",
+    creativePageSubtitle:
+      "인터랙티브 미디어, 사진, 디자인 실험, 그리고 직접 봐야 더 잘 전해지는 작업들입니다.",
+    creativeSliderKicker: "갤러리",
+    creativeSliderTitle: "옆으로 스크롤하며 둘러보기.",
+    creativeSliderHint: "제가 좋아서 해온 작업이나 자랑스럽게 생각하는 것들을 모아 둔 컬렉션입니다.",
   },
 };
 
 const STORAGE_KEY = "preferredLanguage";
+const HOME_SCROLL_KEY = "homePageScrollY";
+const HOME_RESTORE_KEY = "restoreHomePageScroll";
 const TYPE_SPEED = 45; // ms per character for smooth typing
+const ABOUT_ME_PATH = "data/aboutme.json";
 const COURSEWORK_PATHS = ["data/coursework.json", "data/coursework.jsom"];
 const PROGRAMMING_PROJECTS_PATH = "data/programmingprojects.json";
+const CREATIVE_PROJECTS_PATH = "data/creativeprojects.json";
 const RECOMMENDED_PROJECT_TAGS = [
   "Computer Graphics",
   "User Interface (UI)",
@@ -348,7 +399,10 @@ const RECOMMENDED_PROJECT_TAGS = [
 const MAX_PROJECT_SUGGESTIONS = 5;
 let activeLanguage = "en";
 let caretHideTimeout = null;
+let aboutMeState = null;
 let programmingProjectsState = null;
+let creativeProjectsState = null;
+let siteMenuState = null;
 
 function setCaretState(caretEl, { visible, blinking }) {
   if (!caretEl) return;
@@ -433,12 +487,17 @@ async function setLanguage(lang, { persist = true } = {}) {
 
   // update all other translatable text nodes
   applyStaticTranslations(strings);
+  rerenderSiteMenu();
+  rerenderAboutMe();
   rerenderProgrammingProjects();
+  rerenderCreativeProjects();
 
   if (persist) localStorage.setItem(STORAGE_KEY, normalized);
 }
 
 function initLanguagePicker() {
+  initFloatingSiteMenu();
+
   const buttons = document.querySelectorAll("[data-lang]");
   for (const button of buttons) {
     button.addEventListener("click", () => {
@@ -452,9 +511,115 @@ function initLanguagePicker() {
   setLanguage(preferred, { persist: Boolean(stored) });
 }
 
+function saveHomeScrollPosition() {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  if (currentPath !== "index.html") return;
+  sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY));
+}
+
+function markHomeScrollRestore() {
+  sessionStorage.setItem(HOME_RESTORE_KEY, "1");
+}
+
+function initHomeScrollPersistence() {
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+  if (currentPath === "index.html") {
+    const shouldRestore = sessionStorage.getItem(HOME_RESTORE_KEY) === "1";
+    const savedScroll = Number(sessionStorage.getItem(HOME_SCROLL_KEY) || "0");
+
+    if (shouldRestore && Number.isFinite(savedScroll)) {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: savedScroll, behavior: "auto" });
+        sessionStorage.removeItem(HOME_RESTORE_KEY);
+      });
+    }
+
+    window.addEventListener("scroll", saveHomeScrollPosition, { passive: true });
+    window.addEventListener("pagehide", saveHomeScrollPosition);
+
+    document
+      .querySelectorAll(
+        'a[href="programmingprojects.html"], a[href="creativeprojects.html"], a[href="aboutme.html"]'
+      )
+      .forEach((link) => {
+        link.addEventListener("click", () => {
+          saveHomeScrollPosition();
+          markHomeScrollRestore();
+        });
+      });
+  }
+}
+
+async function initAboutMe() {
+  const heroKicker = document.querySelector("[data-about-hero-kicker]");
+  const title = document.querySelector("[data-about-title]");
+  const subtitle = document.querySelector("[data-about-subtitle]");
+  const sectionKicker = document.querySelector("[data-about-section-kicker]");
+  const headline = document.querySelector("[data-about-headline]");
+  const paragraphsRoot = document.querySelector("[data-about-paragraphs]");
+  const backButton = document.querySelector(".project-floating-back");
+
+  if (
+    !heroKicker ||
+    !title ||
+    !subtitle ||
+    !sectionKicker ||
+    !headline ||
+    !paragraphsRoot ||
+    !backButton
+  ) {
+    return;
+  }
+
+  const content = await loadAboutMeContent();
+  if (!content) return;
+
+  backButton.addEventListener("click", () => {
+    markHomeScrollRestore();
+  });
+
+  const render = () => {
+    const strings = getCurrentStrings();
+    backButton.href = "index.html";
+    backButton.setAttribute("aria-label", strings.projectBackHome);
+    backButton.title = strings.projectBackHome;
+
+    heroKicker.textContent = getLocalizedAboutValue(content.hero_kicker, "Profile");
+    title.textContent = getLocalizedAboutValue(content.title, "about me.");
+    subtitle.textContent = getLocalizedAboutValue(
+      content.subtitle,
+      "A placeholder page for background, interests, and the kind of work I care about building."
+    );
+    sectionKicker.textContent = getLocalizedAboutValue(content.section_kicker, "Placeholder Text");
+    headline.textContent = getLocalizedAboutValue(
+      content.headline,
+      "building thoughtful software, visuals, and systems."
+    );
+    renderAboutParagraphs(paragraphsRoot, content.paragraphs);
+  };
+
+  aboutMeState = { render };
+  render();
+}
+
+async function loadAboutMeContent() {
+  try {
+    const response = await fetch(ABOUT_ME_PATH);
+    if (!response.ok) return null;
+    return await response.json();
+  } catch (error) {
+    console.warn("Unable to load about me content.", error);
+    return null;
+  }
+}
+
 initLanguagePicker();
+initHomeScrollPersistence();
+initAboutMe();
 initCoursework();
 initProgrammingProjects();
+initCreativeProjects();
 
 // Keep available for debugging in the console.
 window.setLanguage = setLanguage;
@@ -491,6 +656,91 @@ function applyStaticTranslations(strings) {
       el.setAttribute("title", strings[key]);
     }
   });
+}
+
+function initFloatingSiteMenu() {
+  if (siteMenuState?.shell?.isConnected) return;
+
+  const shell = document.createElement("div");
+  shell.className = "site-nav-shell";
+
+  if (document.querySelector(".project-floating-back, .creative-floating-back")) {
+    shell.classList.add("has-back-button");
+  }
+
+  const trigger = document.createElement("button");
+  trigger.type = "button";
+  trigger.className = "neumorphic-circle site-nav-trigger";
+  trigger.setAttribute("aria-expanded", "false");
+  trigger.setAttribute("data-i18n-aria-label", "navMenuOpen");
+  trigger.setAttribute("data-i18n-title", "navMenuOpen");
+  trigger.innerHTML = `
+    <span class="site-nav-trigger-lines" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  `;
+
+  const panel = document.createElement("nav");
+  panel.className = "site-nav-panel";
+  panel.hidden = true;
+  panel.setAttribute("aria-label", "Site");
+
+  const links = [
+    { href: "index.html", key: "navHome" },
+    { href: "programmingprojects.html", key: "navProgramming" },
+    { href: "creativeprojects.html", key: "navCreative" },
+    { href: "aboutme.html", key: "navAbout" },
+  ].map((item) => {
+    const link = document.createElement("a");
+    link.className = "site-nav-link";
+    link.href = item.href;
+    link.setAttribute("data-i18n", item.key);
+    panel.appendChild(link);
+    return link;
+  });
+
+  const setOpen = (open) => {
+    shell.classList.toggle("is-open", open);
+    trigger.setAttribute("aria-expanded", String(open));
+    trigger.setAttribute("data-i18n-aria-label", open ? "navMenuClose" : "navMenuOpen");
+    trigger.setAttribute("data-i18n-title", open ? "navMenuClose" : "navMenuOpen");
+    panel.hidden = !open;
+    applyStaticTranslations(getCurrentStrings());
+  };
+
+  trigger.addEventListener("click", () => {
+    setOpen(!shell.classList.contains("is-open"));
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!shell.classList.contains("is-open")) return;
+    if (shell.contains(event.target)) return;
+    setOpen(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !shell.classList.contains("is-open")) return;
+    setOpen(false);
+  });
+
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  links.forEach((link) => {
+    if (link.getAttribute("href") === currentPath) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+
+  shell.append(trigger, panel);
+  document.body.appendChild(shell);
+  siteMenuState = { shell, trigger, panel, setOpen };
+  applyStaticTranslations(getCurrentStrings());
+}
+
+function rerenderSiteMenu() {
+  if (!siteMenuState?.shell?.isConnected) return;
+  applyStaticTranslations(getCurrentStrings());
 }
 
 async function initCoursework() {
@@ -549,6 +799,7 @@ async function initProgrammingProjects() {
   const resultsHeader = document.querySelector("[data-project-results-header]");
   const resultsFilters = document.querySelector("[data-project-results-filters]");
   const gallery = document.querySelector("[data-project-gallery]");
+  const sliderWindow = document.querySelector(".project-slider-window");
   const sliderTrack = document.querySelector("[data-project-slider-track]");
 
   if (
@@ -561,6 +812,7 @@ async function initProgrammingProjects() {
     !resultsHeader ||
     !resultsFilters ||
     !gallery ||
+    !sliderWindow ||
     !sliderTrack
   ) {
     return;
@@ -576,6 +828,40 @@ async function initProgrammingProjects() {
       : getFallbackProgrammingProjects();
   const suggestionValues = getProjectSuggestionValues(items, coursework);
   cachedProjectSuggestionValues = suggestionValues;
+  let sliderLoopWidth = 0;
+  let sliderRafId = 0;
+  let sliderHovered = false;
+  let sliderDragging = false;
+  let sliderPointerMoved = false;
+  let dragStartX = 0;
+  let dragStartScrollLeft = 0;
+  let dragTargetCard = null;
+
+  const syncProjectSliderLoop = () => {
+    if (!sliderLoopWidth) return;
+
+    if (sliderWindow.scrollLeft < sliderLoopWidth * 0.5) {
+      sliderWindow.scrollLeft += sliderLoopWidth;
+    } else if (sliderWindow.scrollLeft > sliderLoopWidth * 1.5) {
+      sliderWindow.scrollLeft -= sliderLoopWidth;
+    }
+  };
+
+  const runProjectSlider = () => {
+    cancelAnimationFrame(sliderRafId);
+
+    const step = () => {
+      if (!sliderHovered && !sliderDragging && !gallery.hidden && sliderLoopWidth) {
+        sliderWindow.scrollLeft += 0.45;
+        syncProjectSliderLoop();
+      }
+
+      sliderRafId = requestAnimationFrame(step);
+    };
+
+    sliderRafId = requestAnimationFrame(step);
+  };
+
   const syncFromQuery = () => {
     const query = new URLSearchParams(window.location.search).get("q") ?? "";
     searchInput.value = query;
@@ -586,7 +872,11 @@ async function initProgrammingProjects() {
       getCurrentStrings()[hasActiveSearch ? "projectBackProjects" : "projectBackHome"]
     );
     backButton.title = getCurrentStrings()[hasActiveSearch ? "projectBackProjects" : "projectBackHome"];
-    renderProjectGallery(sliderTrack, items);
+    sliderLoopWidth = renderProjectGallery(sliderTrack, items);
+    requestAnimationFrame(() => {
+      sliderWindow.scrollLeft = sliderLoopWidth;
+      syncProjectSliderLoop();
+    });
     renderProjectSuggestionPills(suggestionPills, suggestionValues, query);
     renderProjectSearchResults({
       query,
@@ -598,6 +888,87 @@ async function initProgrammingProjects() {
     });
   };
   programmingProjectsState = { syncFromQuery };
+
+  backButton.addEventListener("click", () => {
+    if (backButton.getAttribute("href") === "index.html") {
+      markHomeScrollRestore();
+    }
+  });
+
+  sliderWindow.addEventListener(
+    "wheel",
+    (event) => {
+      if (gallery.hidden || !sliderLoopWidth) return;
+
+      const movement = Math.abs(event.deltaX) > Math.abs(event.deltaY)
+        ? event.deltaX
+        : event.deltaY;
+
+      if (!movement) return;
+      event.preventDefault();
+      sliderWindow.scrollLeft += movement;
+      syncProjectSliderLoop();
+    },
+    { passive: false }
+  );
+
+  sliderWindow.addEventListener("mouseenter", () => {
+    sliderHovered = true;
+  });
+
+  sliderWindow.addEventListener("mouseleave", () => {
+    sliderHovered = false;
+    sliderDragging = false;
+    sliderWindow.classList.remove("is-dragging");
+  });
+
+  sliderWindow.addEventListener("pointerdown", (event) => {
+    if (gallery.hidden || !sliderLoopWidth) return;
+
+    sliderDragging = true;
+    sliderPointerMoved = false;
+    dragStartX = event.clientX;
+    dragStartScrollLeft = sliderWindow.scrollLeft;
+    dragTargetCard = event.target.closest(".project-slider-card");
+    sliderHovered = true;
+    sliderWindow.setPointerCapture(event.pointerId);
+  });
+
+  sliderWindow.addEventListener("pointermove", (event) => {
+    if (!sliderDragging) return;
+
+    const delta = event.clientX - dragStartX;
+    if (Math.abs(delta) > 6) {
+      sliderPointerMoved = true;
+      sliderWindow.classList.add("is-dragging");
+    }
+
+    if (!sliderPointerMoved) return;
+    sliderWindow.scrollLeft = dragStartScrollLeft - delta;
+    syncProjectSliderLoop();
+  });
+
+  const releaseProjectSliderPointer = (event) => {
+    if (!sliderDragging) return;
+
+    const shouldOpenCard = !sliderPointerMoved && dragTargetCard;
+    sliderDragging = false;
+    sliderPointerMoved = false;
+    dragTargetCard = null;
+    sliderWindow.classList.remove("is-dragging");
+
+    if (sliderWindow.hasPointerCapture(event.pointerId)) {
+      sliderWindow.releasePointerCapture(event.pointerId);
+    }
+
+    if (shouldOpenCard) {
+      shouldOpenCard.click();
+    }
+  };
+
+  sliderWindow.addEventListener("pointerup", releaseProjectSliderPointer);
+  sliderWindow.addEventListener("pointercancel", releaseProjectSliderPointer);
+  window.addEventListener("resize", syncProjectSliderLoop);
 
   viewAllButton.addEventListener("click", () => {
     const url = new URL(window.location.href);
@@ -640,7 +1011,282 @@ async function initProgrammingProjects() {
     syncFromQuery();
   });
 
+  runProjectSlider();
   syncFromQuery();
+}
+
+async function initCreativeProjects() {
+  const backButton = document.querySelector(".creative-floating-back");
+  const slider = document.querySelector("[data-creative-slider]");
+  const track = document.querySelector("[data-creative-track]");
+
+  if (!backButton || !slider || !track) return;
+
+  const projects = await loadCreativeProjects();
+  const items =
+    Array.isArray(projects) && projects.length > 0
+      ? projects
+      : getFallbackCreativeProjects();
+
+  backButton.addEventListener("click", () => {
+    markHomeScrollRestore();
+  });
+
+  let rafId = 0;
+  let loopWidth = 0;
+  let snapTimeoutId = 0;
+
+  const syncLoopPosition = () => {
+    if (!loopWidth) return;
+
+    if (slider.scrollLeft < loopWidth) {
+      slider.scrollLeft += loopWidth * 2;
+    } else if (slider.scrollLeft > loopWidth * 3) {
+      slider.scrollLeft -= loopWidth * 2;
+    }
+  };
+
+  const updateCarousel = () => {
+    const cards = track.querySelectorAll(".creative-slider-card");
+    const bounds = slider.getBoundingClientRect();
+    const center = bounds.left + bounds.width / 2;
+
+    cards.forEach((card) => {
+      const cardBounds = card.getBoundingClientRect();
+      const cardCenter = cardBounds.left + cardBounds.width / 2;
+      const delta = (cardCenter - center) / Math.max(bounds.width / 2, 1);
+      const offset = Math.max(-1.2, Math.min(1.2, delta));
+      const depth = 1 - Math.min(Math.abs(offset), 1);
+      card.style.setProperty("--creative-offset", offset.toFixed(3));
+      card.style.setProperty("--creative-depth", depth.toFixed(3));
+    });
+  };
+
+  const centerNearestCard = ({ smooth = true } = {}) => {
+    const cards = Array.from(track.querySelectorAll(".creative-slider-card"));
+    if (!cards.length) return;
+
+    syncLoopPosition();
+
+    const sliderBounds = slider.getBoundingClientRect();
+    const sliderCenter = sliderBounds.left + sliderBounds.width / 2;
+    let nearestCard = null;
+    let nearestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card) => {
+      const bounds = card.getBoundingClientRect();
+      const center = bounds.left + bounds.width / 2;
+      const distance = Math.abs(center - sliderCenter);
+
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestCard = card;
+      }
+    });
+
+    if (!nearestCard || nearestDistance < 6) {
+      updateCarousel();
+      return;
+    }
+
+    const targetLeft =
+      nearestCard.offsetLeft - (slider.clientWidth - nearestCard.offsetWidth) / 2;
+
+    slider.scrollTo({
+      left: targetLeft,
+      behavior: smooth ? "smooth" : "auto",
+    });
+  };
+
+  const queueCarouselUpdate = () => {
+    cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      syncLoopPosition();
+      updateCarousel();
+    });
+  };
+
+  const queueCenterNearestCard = () => {
+    window.clearTimeout(snapTimeoutId);
+    snapTimeoutId = window.setTimeout(() => {
+      centerNearestCard({ smooth: true });
+    }, 130);
+  };
+
+  const render = () => {
+    const strings = getCurrentStrings();
+    backButton.href = "index.html";
+    backButton.setAttribute("aria-label", strings.projectBackHome);
+    backButton.title = strings.projectBackHome;
+    loopWidth = renderCreativeProjectCards(track, items);
+    requestAnimationFrame(() => {
+      slider.scrollLeft = loopWidth * 2;
+      centerNearestCard({ smooth: false });
+    });
+  };
+
+  slider.addEventListener("scroll", () => {
+    queueCarouselUpdate();
+    queueCenterNearestCard();
+  }, { passive: true });
+  window.addEventListener("resize", queueCarouselUpdate);
+
+  creativeProjectsState = { render };
+  render();
+}
+
+async function loadCreativeProjects() {
+  try {
+    const response = await fetch(CREATIVE_PROJECTS_PATH);
+    if (!response.ok) return null;
+
+    const projects = await response.json();
+    return Array.isArray(projects) ? projects : null;
+  } catch (error) {
+    console.warn("Unable to load creative projects data.", error);
+    return null;
+  }
+}
+
+function getFallbackCreativeProjects() {
+  return [
+    {
+      title: {
+        en: "Motion Study One",
+        zh: "動態研究一",
+        ja: "モーションスタディ 1",
+        ko: "모션 스터디 1",
+      },
+      image: "assets/images/hero-bg.jpg",
+      description:
+        "A placeholder card for visuals, pacing, and art direction notes around a motion-heavy creative experiment.",
+      links: {
+        website: "https://example.com/creative-one",
+      },
+      tags: ["Interactive Media", "Motion", "Art Direction"],
+    },
+    {
+      title: {
+        en: "Photo Essay Two",
+        zh: "攝影隨筆二",
+        ja: "フォトエッセイ 2",
+        ko: "포토 에세이 2",
+      },
+      image: "",
+      description:
+        "A placeholder card for photography, sequencing, and visual storytelling across a compact editorial format.",
+      links: {
+        project: "assets/pdfs/placeholder-creative.pdf",
+      },
+      tags: ["Photography", "Editorial", "Storytelling"],
+    },
+    {
+      title: {
+        en: "Playable Installation Three",
+        zh: "互動裝置三",
+        ja: "プレイアブル・インスタレーション 3",
+        ko: "플레이어블 설치작업 3",
+      },
+      image: "assets/images/bafter.png",
+      description:
+        "A placeholder card for spatial interaction, installation design, and the kind of work that sits between software and exhibition.",
+      links: {
+        github: "https://github.com/rickeychiu/creative-placeholder",
+      },
+      tags: ["Installation", "Interaction", "Creative Coding"],
+    },
+  ];
+}
+
+function renderCreativeProjectCards(track, projects) {
+  const clones = [];
+
+  for (let copy = 0; copy < 5; copy += 1) {
+    projects.forEach((project, index) => {
+      clones.push(createCreativeProjectCard(project, index));
+    });
+  }
+
+  track.replaceChildren(...clones);
+
+  const cards = Array.from(track.children);
+  if (projects.length === 0 || cards.length <= projects.length) return 0;
+
+  return cards[projects.length].offsetLeft - cards[0].offsetLeft;
+}
+
+function createCreativeProjectCard(project, index) {
+  const article = document.createElement("article");
+  article.className = "creative-slider-card";
+
+  const media = document.createElement("div");
+  media.className = "creative-card-media";
+
+  const titleValue = getLocalizedProjectTitle(project, `Creative Project ${index + 1}`);
+  const image = getProjectField(project, "image", "");
+
+  if (image) {
+    const img = document.createElement("img");
+    img.className = "creative-card-image";
+    img.src = image;
+    img.alt = `${titleValue} preview`;
+    img.addEventListener("error", () => {
+      media.replaceChildren(createCreativePlaceholder(titleValue));
+    });
+    media.appendChild(img);
+  } else {
+    media.appendChild(createCreativePlaceholder(titleValue));
+  }
+
+  const body = document.createElement("div");
+  body.className = "creative-card-body";
+
+  const title = document.createElement("h2");
+  title.textContent = titleValue;
+
+  const description = document.createElement("p");
+  description.textContent = getProjectField(
+    project,
+    "description",
+    "Creative project description placeholder."
+  );
+
+  body.appendChild(title);
+  body.appendChild(description);
+
+  const actionRow = createCreativeActionRow(project);
+  if (actionRow) body.appendChild(actionRow);
+
+  article.append(media, body);
+  return article;
+}
+
+function createStaticTagList(tags, className = "") {
+  if (!tags.length) return null;
+
+  const list = document.createElement("ul");
+  list.className = ["pill-list", className].filter(Boolean).join(" ");
+  list.setAttribute("aria-label", "Project tags");
+
+  tags.forEach((tag) => {
+    const item = document.createElement("li");
+    item.className = "pill";
+    item.textContent = tag;
+    list.appendChild(item);
+  });
+
+  return list;
+}
+
+function createCreativePlaceholder(title) {
+  const placeholder = document.createElement("div");
+  placeholder.className = "media-placeholder creative-placeholder";
+
+  const label = document.createElement("span");
+  label.textContent = `${title} image`;
+  placeholder.appendChild(label);
+
+  return placeholder;
 }
 
 async function loadProgrammingProjects() {
@@ -796,6 +1442,27 @@ function createProjectActionRow(project) {
   return row;
 }
 
+function createCreativeActionRow(project) {
+  const actions = getCreativeProjectActions(project);
+  if (!actions.length) return null;
+
+  const row = document.createElement("div");
+  row.className = "project-action-row";
+  row.setAttribute("data-count", String(actions.length));
+
+  for (const action of actions) {
+    const link = document.createElement("a");
+    link.className = "neumo-button";
+    link.href = action.href;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.append(createProjectActionLabel(action.label), createCreativeActionIcon());
+    row.appendChild(link);
+  }
+
+  return row;
+}
+
 function createProjectActionIcon(type) {
   if (type === "github" || type === "project" || type === "website") {
     const image = document.createElement("img");
@@ -808,6 +1475,14 @@ function createProjectActionIcon(type) {
     return image;
   }
   return document.createElement("span");
+}
+
+function createCreativeActionIcon() {
+  const image = document.createElement("img");
+  image.className = "project-action-icon";
+  image.src = "assets/images/linktoexternalsite.png";
+  image.alt = "";
+  return image;
 }
 
 function createProjectActionLabel(text) {
@@ -830,6 +1505,30 @@ function createProjectPlaceholder(title) {
 function getProjectField(project, field, fallback) {
   const value = project?.[field];
   return typeof value === "string" && value.trim() ? value.trim() : fallback;
+}
+
+function getLocalizedAboutValue(value, fallback = "") {
+  if (typeof value === "string" && value.trim()) return value.trim();
+  if (value && typeof value === "object") {
+    const localized = value[activeLanguage] ?? value.en;
+    if (typeof localized === "string" && localized.trim()) return localized.trim();
+  }
+  return fallback;
+}
+
+function renderAboutParagraphs(container, paragraphsByLanguage) {
+  const paragraphs =
+    (paragraphsByLanguage && paragraphsByLanguage[activeLanguage]) ||
+    paragraphsByLanguage?.en ||
+    [];
+
+  container.replaceChildren(
+    ...paragraphs.map((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      return paragraph;
+    })
+  );
 }
 
 function getLocalizedProjectTitle(project, fallback = "") {
@@ -895,6 +1594,35 @@ function getProjectActions(project) {
   }
 
   return actions;
+}
+
+function getCreativeProjectActions(project) {
+  const links = project?.links;
+  if (!links || typeof links !== "object") return [];
+
+  return Object.entries(links)
+    .map(([type, href]) => {
+      const normalizedHref = normalizeProjectLink(href);
+      if (!normalizedHref) return null;
+
+      return {
+        href: normalizedHref,
+        label: `Open ${formatCreativeLinkType(type)}`,
+        type,
+      };
+    })
+    .filter(Boolean);
+}
+
+function formatCreativeLinkType(type) {
+  if (typeof type !== "string" || !type.trim()) return "Link";
+
+  return type
+    .trim()
+    .split(/[_-\s]+/)
+    .filter(Boolean)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(" ");
 }
 
 function normalizeProjectLink(value) {
@@ -1027,14 +1755,20 @@ function renderProjectResultsFilters(container, filters) {
 }
 
 function renderProjectGallery(track, projects) {
-  const cards = projects.map((project, index) =>
-    createProjectSliderCard(project, index)
-  );
-  const duplicateCards = projects.map((project, index) =>
-    createProjectSliderCard(project, index)
-  );
+  const clones = [];
 
-  track.replaceChildren(...cards, ...duplicateCards);
+  for (let copy = 0; copy < 3; copy += 1) {
+    projects.forEach((project, index) => {
+      clones.push(createProjectSliderCard(project, index));
+    });
+  }
+
+  track.replaceChildren(...clones);
+
+  const cards = Array.from(track.children);
+  if (projects.length === 0 || cards.length <= projects.length) return 0;
+
+  return cards[projects.length].offsetLeft - cards[0].offsetLeft;
 }
 
 function createProjectSliderCard(project, index) {
@@ -1154,6 +1888,16 @@ function getCurrentStrings() {
 function rerenderProgrammingProjects() {
   if (!programmingProjectsState?.syncFromQuery) return;
   programmingProjectsState.syncFromQuery();
+}
+
+function rerenderCreativeProjects() {
+  if (!creativeProjectsState?.render) return;
+  creativeProjectsState.render();
+}
+
+function rerenderAboutMe() {
+  if (!aboutMeState?.render) return;
+  aboutMeState.render();
 }
 
 let cachedProjectSuggestionValues = [];

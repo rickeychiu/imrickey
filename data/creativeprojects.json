@@ -1,0 +1,41 @@
+[
+  {
+    "title": {
+      "en": "RYUZAWA 流沢",
+      "zh": "流澤 - Minecraft",
+      "ja": "流沢 - マインクラフト",
+      "ko": "류짜와 - 마인크래프트"
+    },
+    "image": "assets/images/hero-bg.jpg",
+    "description": "The most recent Minecraft world I have been building in my free time, usually when I want to satiate my craving for creation. I explore different architectural and fantastical styles, aiming to make it the ideal place I would live in.",
+    "links": {
+      "world": "http://rick-buildcraft.mcnetwork.me:25575/#buildcraftseason15:83:167:426:0:-0.35:1.39:0:0:free"
+    }
+  },
+  {
+    "title": {
+      "en": "cloudy day in hakone",
+      "zh": "一個陰天在箱根",
+      "ja": "箱根での曇り一日",
+      "ko": "흐린 하코네의 하루"
+    },
+    "image": "assets/images/hakone.png",
+    "description": "My first attempt at a calm, cozy vlog on my trip in Hakone as well as some bits from Kamakura. When I have more time, I hope to edit more videos that document joyous memories and share them with others.",
+    "links": {
+      "video": "https://www.youtube.com/watch?v=VZGrHXNF0Pk"
+    }
+  },
+  {
+    "title": {
+      "en": "Lynbrook VOGUE",
+      "zh": "Lynbrook VOGUE",
+      "ja": "リンブルック・ヴォーグ",
+      "ko": "린브룩 보그"
+    },
+    "image": "assets/images/voguedesign.png",
+    "description": "A simple cover design made for a page in my high school's planner when I was experimenting with typography and graphic design. Made with Adobe Photoshop, Lightroom, and Illustrator.",
+    "links": {
+      "design": "assets/images/voguedesign.png"
+    }
+  }
+]

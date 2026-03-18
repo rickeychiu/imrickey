@@ -1,0 +1,50 @@
+{
+  "hero_kicker": {
+    "en": "Profile",
+    "zh": "個人簡介",
+    "ja": "プロフィール",
+    "ko": "프로필"
+  },
+  "title": {
+    "en": "about me.",
+    "zh": "關於我。",
+    "ja": "私について。",
+    "ko": "about me."
+  },
+  "subtitle": {
+    "en": "A brief blurb of what I work on and things I like to do.",
+    "zh": "簡短介紹一下我在做什麼，以及我平常喜歡做的事。",
+    "ja": "自分が取り組んでいることと、普段好きでやっていることを簡単にまとめた紹介です。",
+    "ko": "제가 어떤 일을 하고 있고, 평소 무엇을 좋아하는지 간단히 소개한 글입니다."
+  },
+  "section_kicker": {
+    "en": "I'm interested in...",
+    "zh": "我有興趣的是...",
+    "ja": "私が興味を持っているのは...",
+    "ko": "제가 관심 있는 것은..."
+  },
+  "headline": {
+    "en": "building thoughtful software, visuals, and systems.",
+    "zh": "打造有想法的軟體、視覺與系統。",
+    "ja": "考え抜かれたソフトウェア、ビジュアル、そしてシステムをつくる。",
+    "ko": "생각이 담긴 소프트웨어, 비주얼, 시스템을 만든다."
+  },
+  "paragraphs": {
+    "en": [
+      "I’m a Computer Science student at Columbia University focused on building high-performance, human-centered software. I work across software engineering, applied AI, game development, and interactive media— designing systems that are not only technically strong, but usable and visually intuitive. I’m most motivated by products that create tangible impact, whether through education, intelligent tools, or technology that improves everyday life. I’m also interested in how engineering intersects with biology, chemistry, and culture, exploring how interdisciplinary thinking can shape more meaningful, accessible technology.", 
+      "In my free time, I enjoy playing open-world and competitive video games, playing volleyball, trying new matcha and tea stores, and explore cinematography and content creation."
+    ],
+    "zh": [
+      "我是哥倫比亞大學的電腦科學學生，專注於打造高效能、以人為中心的軟體。我涉獵軟體工程、應用型 AI、遊戲開發與互動媒體，設計的不只是技術上扎實的系統，也重視可用性與直覺的視覺體驗。最能驅動我的是那些能帶來實際影響的產品，不論是教育、智慧工具，還是能改善日常生活的科技。我也很在意工程如何與生物、化學與文化交會，並探索跨領域思考如何塑造更有意義、更易於接近的技術。",
+      "空閒時，我喜歡玩開放世界與競技型電玩、打排球、嘗試新的抹茶與茶店，也喜歡探索電影攝影與內容創作。"
+    ],
+    "ja": [
+      "私はコロンビア大学でコンピュータサイエンスを学んでおり、高性能で人間中心のソフトウェアをつくることに力を入れています。ソフトウェアエンジニアリング、応用 AI、ゲーム開発、インタラクティブメディアを横断しながら、技術的に強いだけでなく、使いやすく視覚的にも直感的なシステムを設計しています。教育、知的ツール、あるいは日常生活を良くするテクノロジーを通して、実際のインパクトを生み出すプロダクトに最も強く惹かれます。また、工学が生物学、化学、文化とどのように交わるかにも関心があり、学際的な発想がより意味のある、よりアクセスしやすい技術を形づくる可能性を探っています。",
+      "自由時間には、オープンワールド系や対戦系のゲームをしたり、バレーボールをしたり、新しい抹茶やお茶のお店を巡ったり、映像表現やコンテンツ制作を楽しんだりしています。"
+    ],
+    "ko": [
+      "저는 컬럼비아대학교에서 컴퓨터과학을 공부하고 있으며, 고성능이면서도 사람 중심적인 소프트웨어를 만드는 데 집중하고 있습니다. 소프트웨어 엔지니어링, 응용 AI, 게임 개발, 인터랙티브 미디어를 넘나들며 기술적으로 탄탄할 뿐 아니라 사용하기 쉽고 시각적으로도 직관적인 시스템을 설계합니다. 저를 가장 움직이게 하는 것은 교육, 지능형 도구, 혹은 일상을 더 좋게 만드는 기술처럼 실제로 영향을 만들어내는 제품입니다. 또한 공학이 생물학, 화학, 문화와 만나는 지점에도 관심이 있으며, 학제적인 사고가 어떻게 더 의미 있고 접근성 높은 기술을 만들 수 있는지 탐구하고 있습니다.",
+      "여가 시간에는 오픈월드 게임과 경쟁형 게임을 즐기고, 배구를 하며, 새로운 말차와 차 가게를 찾아다니고, 시네마토그래피와 콘텐츠 제작도 탐구합니다."
+    ]
+  }
+}

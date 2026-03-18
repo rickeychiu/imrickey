@@ -26,7 +26,7 @@
       "project": "assets/pdfs/Cell_Segmentation_Conference_Paper.pdf",
       "website": ""
     },
-    "tags": ["Machine Learning (ML)",  "Deep Learning", "Research", "Artificial Intelligence (AI)", "Python", "PyTorch"]
+    "tags": ["Machine Learning (ML)",  "Deep Learning", "Research", "Artificial Intelligence (AI)", "Biomedical", "Python", "PyTorch"]
   },
   {
     "title": {
@@ -44,10 +44,10 @@
   },
   {
     "title": {
-      "en": "SkyOre - Indie Platformer Game",
-      "zh": "SkyOre - 獨立平台遊戲",
-      "ja": "SkyOre - インディープラットフォーマー",
-      "ko": "SkyOre - 인디 플랫포머 게임"
+      "en": "SkyOre Indie Platformer Game",
+      "zh": "SkyOre 獨立平台遊戲",
+      "ja": "SkyOre インディープラットフォーマー",
+      "ko": "SkyOre 인디 플랫포머 게임"
     },
     "image": "assets/images/skyore.png",
     "description": "Created a 2D indie platformer in Unity using C# and ShaderLab, featuring procedural map generation, physics-based gameplay, and optimized animation systems. Designed the game to feel smooth, responsive, and scalable across devices.",
@@ -60,7 +60,7 @@
     "title": {
       "en": "LHS Course Planner iOS App",
       "zh": "LHS 課程規劃 iOS App",
-      "ja": "LHS 履修計画 iOS アプリ",
+      "ja": "LHS 授業計画 iOS アプリ",
       "ko": "LHS 수강 계획 iOS 앱"
     },
     "image": "assets/images/lhscourseplanner.png",
@@ -88,8 +88,8 @@
     "title": {
       "en": "Budgeteer",
       "zh": "Budgeteer",
-      "ja": "Budgeteer",
-      "ko": "Budgeteer"
+      "ja": "バージェティア",
+      "ko": "바제티어"
     },
     "image": "assets/images/budgeteer.png",
     "description": "A full-stack personal finance web app built for DivHacks 2025 that helps users track spending, visualize financial trends, and better understand their habits. By combining Capital One API data with OpenAI-powered summaries, Budgeteer turns real transaction data into clear, interactive, and accessible financial insights.",
@@ -97,5 +97,19 @@
       "github": "https://github.com/rickeychiu/budgeteer"
     },
     "tags": ["FinTech", "Full-Stack", "React", "Tailwind CSS", "Node.js", "Hackathon", "Git"]
+  },
+  {
+    "title": {
+      "en": "Personal Portfolio Website",
+      "zh": "我的作品集網站",
+      "ja": "ポートフォリオウェブサイト",
+      "ko": "포트폴리오 웹사이트"
+    },
+    "image": "assets/images/portfolio.png",
+    "description": "A multilingual personal portfolio website designed and built from scratch to showcase my programming, creative, and academic work. I focused on creating a polished, human-centered interface with custom neumorphic styling, dynamic project rendering from JSON, language switching, and interactive gallery/search experiences that make the site feel both personal and functional.",
+    "links": {
+      "github": "https://github.com/rickeychiu/imrickey"
+    },
+    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git"]
   }
 ]

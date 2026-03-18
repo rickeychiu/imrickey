@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | rickeychiu</title>
+    <meta
+      name="description"
+      content="About Rickey Chiu — builder, designer, and engineer."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="neumorphic-circle project-floating-back" href="index.html" aria-label="Back to home" title="Back to home">
+      ←
+    </a>
+
+    <nav class="lang-picker" aria-label="Language">
+      <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
+        EN
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
+        中
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
+        日
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
+        한
+      </button>
+    </nav>
+
+    <header class="hero project-hero-compact" style="--hero-bg-url: url('assets/images/hero-bg.jpg')">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <section class="project-hero-panel" aria-label="About me">
+        <div class="project-page-heading">
+          <div>
+            <p class="project-kicker" data-about-hero-kicker>Profile</p>
+            <h1 data-about-title>about me.</h1>
+            <p class="project-subtitle" data-about-subtitle>
+              A brief blurb of what I work on and things I like to do.
+            </p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="content project-page-shell project-page-top">
+      <section class="neumo-card about-card" aria-label="About Rickey Chiu">
+        <div class="about-grid">
+          <div class="about-portrait-shell" aria-hidden="true">
+            <img
+              class="about-portrait-image"
+              src="assets/images/rickeynobg.png"
+              alt=""
+            />
+          </div>
+
+          <div class="about-copy">
+            <p class="project-kicker" data-about-section-kicker>I'm interested in...</p>
+            <h2 data-about-headline>building thoughtful software, visuals, and systems.</h2>
+            <div data-about-paragraphs>
+              <p>
+                I’m a Computer Science student at Columbia University focused on building high-performance,
+                human-centered software. I work across software engineering, applied AI, game development,
+                and interactive media, designing systems that are not only technically strong, but usable
+                and visually intuitive. I’m most motivated by products that create tangible impact, whether
+                through education, intelligent tools, or technology that improves everyday life. I’m also
+                interested in how engineering intersects with biology, chemistry, and culture, exploring
+                how interdisciplinary thinking can shape more meaningful, accessible technology.
+              </p>
+              <p>
+                In my free time, I enjoy playing open-world and competitive video games, playing volleyball,
+                trying new matcha and tea stores, and exploring cinematography and content creation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="behind-footer" aria-label="Links">
+      <a
+        class="neumorphic-circle footer-icon-link"
+        href="https://github.com/rickeychiu"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <img src="assets/images/githublogo.png" alt="" class="footer-icon-image" />
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="https://www.linkedin.com/in/rickeychiu/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+      >
+        in
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="mailto:you@example.com"
+        aria-label="Email"
+        title="Email"
+      >
+        @
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

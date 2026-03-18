@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Projects | rickeychiu</title>
+    <meta
+      name="description"
+      content="Creative projects by Rickey Chiu, shown in a horizontal gallery."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="neumorphic-circle creative-floating-back" href="index.html" aria-label="Back" title="Back">
+      ←
+    </a>
+
+    <nav class="lang-picker" aria-label="Language">
+      <button class="neumorphic-circle" type="button" data-lang="en" aria-pressed="true" aria-label="English">
+        EN
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="zh" aria-pressed="false" aria-label="中文">
+        中
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ja" aria-pressed="false" aria-label="日本語">
+        日
+      </button>
+      <button class="neumorphic-circle" type="button" data-lang="ko" aria-pressed="false" aria-label="한국어">
+        한
+      </button>
+    </nav>
+
+    <header class="hero project-hero-compact" style="--hero-bg-url: url('assets/images/hero-bg.jpg')">
+      <div class="hero-image-overlay"></div>
+      <div class="hero-bg" aria-hidden="true"></div>
+
+      <section class="project-hero-panel" aria-label="Creative projects">
+        <div class="project-page-heading">
+          <div>
+            <p class="project-kicker" data-i18n="creativePageKicker">Portfolio Index</p>
+            <h1 data-i18n="creativePageTitle">creative projects.</h1>
+            <p class="project-subtitle" data-i18n="creativePageSubtitle">
+              Interactive media, photography, design experiments, and things that make more sense once you see them.
+            </p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="content project-page-shell project-page-top">
+      <section class="neumo-card creative-gallery-card" aria-label="Creative project gallery">
+        <div class="creative-gallery-copy">
+          <p class="project-results-kicker" data-i18n="creativeSliderKicker">Gallery</p>
+          <h2 data-i18n="creativeSliderTitle">a collection of anything i enjoy doing.</h2>
+          <p class="creative-gallery-hint" data-i18n="creativeSliderHint">
+            A collection of anything I like working on or am proud of.
+          </p>
+        </div>
+
+        <div class="creative-slider-shell">
+          <div class="creative-slider" data-creative-slider>
+            <div class="creative-slider-track" data-creative-track></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="behind-footer" aria-label="Links">
+      <a
+        class="neumorphic-circle footer-icon-link"
+        href="https://github.com/rickeychiu"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <img src="assets/images/githublogo.png" alt="" class="footer-icon-image" />
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="https://www.linkedin.com/in/rickeychiu/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+      >
+        in
+      </a>
+      <a
+        class="neumorphic-circle"
+        href="mailto:you@example.com"
+        aria-label="Email"
+        title="Email"
+      >
+        @
+      </a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
