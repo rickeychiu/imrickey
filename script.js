@@ -852,7 +852,7 @@ async function initProgrammingProjects() {
 
     const step = () => {
       if (!sliderHovered && !sliderDragging && !gallery.hidden && sliderLoopWidth) {
-        sliderWindow.scrollLeft += 0.45;
+        sliderWindow.scrollLeft += 0.7;
         syncProjectSliderLoop();
       }
 
@@ -956,6 +956,7 @@ async function initProgrammingProjects() {
     sliderPointerMoved = false;
     dragTargetCard = null;
     sliderWindow.classList.remove("is-dragging");
+    sliderHovered = sliderWindow.matches(":hover");
 
     if (sliderWindow.hasPointerCapture(event.pointerId)) {
       sliderWindow.releasePointerCapture(event.pointerId);
@@ -1019,8 +1020,10 @@ async function initCreativeProjects() {
   const backButton = document.querySelector(".creative-floating-back");
   const slider = document.querySelector("[data-creative-slider]");
   const track = document.querySelector("[data-creative-track]");
+  const prevButton = document.querySelector("[data-creative-prev]");
+  const nextButton = document.querySelector("[data-creative-next]");
 
-  if (!backButton || !slider || !track) return;
+  if (!backButton || !slider || !track || !prevButton || !nextButton) return;
 
   const projects = await loadCreativeProjects();
   const items =
@@ -1035,6 +1038,8 @@ async function initCreativeProjects() {
   let rafId = 0;
   let loopWidth = 0;
   let snapTimeoutId = 0;
+  let snapAnimationTimer = 0;
+  let isCreativeSnapAnimating = false;
 
   const syncLoopPosition = () => {
     if (!loopWidth) return;
@@ -1062,8 +1067,11 @@ async function initCreativeProjects() {
     });
   };
 
-  const centerNearestCard = ({ smooth = true } = {}) => {
-    const cards = Array.from(track.querySelectorAll(".creative-slider-card"));
+  const getCreativeSliderCards = () =>
+    Array.from(track.querySelectorAll(".creative-slider-card"));
+
+  const getNearestCreativeCard = () => {
+    const cards = getCreativeSliderCards();
     if (!cards.length) return;
 
     syncLoopPosition();
@@ -1084,18 +1092,46 @@ async function initCreativeProjects() {
       }
     });
 
-    if (!nearestCard || nearestDistance < 6) {
-      updateCarousel();
-      return;
-    }
+    return { nearestCard, nearestDistance, cards };
+  };
+
+  const centerCreativeCard = (card, { smooth = true } = {}) => {
+    if (!card) return;
 
     const targetLeft =
-      nearestCard.offsetLeft - (slider.clientWidth - nearestCard.offsetWidth) / 2;
+      card.offsetLeft - (slider.clientWidth - card.offsetWidth) / 2;
+
+    window.clearTimeout(snapAnimationTimer);
+    isCreativeSnapAnimating = smooth;
 
     slider.scrollTo({
       left: targetLeft,
       behavior: smooth ? "smooth" : "auto",
     });
+
+    if (!smooth) {
+      isCreativeSnapAnimating = false;
+      return;
+    }
+
+    snapAnimationTimer = window.setTimeout(() => {
+      isCreativeSnapAnimating = false;
+      queueCarouselUpdate();
+    }, 360);
+  };
+
+  const centerNearestCard = ({ smooth = true } = {}) => {
+    const nearest = getNearestCreativeCard();
+    if (!nearest) return;
+
+    const { nearestCard, nearestDistance } = nearest;
+
+    if (!nearestCard || nearestDistance < 6) {
+      updateCarousel();
+      return;
+    }
+
+    centerCreativeCard(nearestCard, { smooth });
   };
 
   const queueCarouselUpdate = () => {
@@ -1107,10 +1143,11 @@ async function initCreativeProjects() {
   };
 
   const queueCenterNearestCard = () => {
+    if (isCreativeSnapAnimating) return;
     window.clearTimeout(snapTimeoutId);
     snapTimeoutId = window.setTimeout(() => {
       centerNearestCard({ smooth: true });
-    }, 130);
+    }, 180);
   };
 
   const render = () => {
@@ -1130,6 +1167,26 @@ async function initCreativeProjects() {
     queueCenterNearestCard();
   }, { passive: true });
   window.addEventListener("resize", queueCarouselUpdate);
+
+  const nudgeCreativeSlider = (direction) => {
+    const nearest = getNearestCreativeCard();
+    if (!nearest?.nearestCard || !nearest.cards?.length) return;
+
+    const currentIndex = nearest.cards.indexOf(nearest.nearestCard);
+    const nextCard = nearest.cards[currentIndex + direction];
+    if (!nextCard) return;
+
+    window.clearTimeout(snapTimeoutId);
+    centerCreativeCard(nextCard, { smooth: true });
+  };
+
+  prevButton.addEventListener("click", () => {
+    nudgeCreativeSlider(-1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    nudgeCreativeSlider(1);
+  });
 
   creativeProjectsState = { render };
   render();
@@ -1224,8 +1281,12 @@ function createCreativeProjectCard(project, index) {
 
   const titleValue = getLocalizedProjectTitle(project, `Creative Project ${index + 1}`);
   const image = getProjectField(project, "image", "");
+  const primaryActionHref = getPrimaryCreativeActionHref(project);
 
   if (image) {
+    const mediaContent = primaryActionHref
+      ? createProjectMediaLink(primaryActionHref)
+      : document.createElement("div");
     const img = document.createElement("img");
     img.className = "creative-card-image";
     img.src = image;
@@ -1233,7 +1294,8 @@ function createCreativeProjectCard(project, index) {
     img.addEventListener("error", () => {
       media.replaceChildren(createCreativePlaceholder(titleValue));
     });
-    media.appendChild(img);
+    mediaContent.appendChild(img);
+    media.appendChild(mediaContent);
   } else {
     media.appendChild(createCreativePlaceholder(titleValue));
   }
@@ -1287,6 +1349,16 @@ function createCreativePlaceholder(title) {
   placeholder.appendChild(label);
 
   return placeholder;
+}
+
+function createProjectMediaLink(href) {
+  const link = document.createElement("a");
+  link.className = "project-media-link";
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.setAttribute("aria-label", "Open project media");
+  return link;
 }
 
 async function loadProgrammingProjects() {
@@ -1374,6 +1446,7 @@ function createProgrammingProjectCard(project, index) {
   media.className = "card-media";
 
   const image = getProjectField(project, "image", "");
+  const primaryActionHref = getPrimaryProjectActionHref(project);
   if (image) {
     const frame = document.createElement("div");
     frame.className = "project-image-frame";
@@ -1387,7 +1460,13 @@ function createProgrammingProjectCard(project, index) {
       frame.replaceChildren(createProjectPlaceholder(title.textContent));
     });
 
-    frame.appendChild(img);
+    if (primaryActionHref) {
+      const mediaLink = createProjectMediaLink(primaryActionHref);
+      mediaLink.appendChild(img);
+      frame.appendChild(mediaLink);
+    } else {
+      frame.appendChild(img);
+    }
     media.appendChild(frame);
   } else {
     media.appendChild(createProjectPlaceholder(title.textContent));
@@ -1612,6 +1691,14 @@ function getCreativeProjectActions(project) {
       };
     })
     .filter(Boolean);
+}
+
+function getPrimaryProjectActionHref(project) {
+  return getProjectActions(project)[0]?.href ?? "";
+}
+
+function getPrimaryCreativeActionHref(project) {
+  return getCreativeProjectActions(project)[0]?.href ?? "";
 }
 
 function formatCreativeLinkType(type) {
