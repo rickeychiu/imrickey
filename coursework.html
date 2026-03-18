@@ -44,11 +44,42 @@
             </p>
           </div>
         </div>
+
+        <form class="project-search-shell" data-coursework-search-form>
+          <label class="project-search-label" for="coursework-search" data-i18n="courseworkSearchLabel">Find coursework</label>
+          <div class="project-search-row">
+            <input
+              id="coursework-search"
+              class="project-search-input"
+              name="q"
+              type="search"
+              placeholder="ex. COMS 4705, Python, UI"
+              autocomplete="off"
+              data-coursework-search-input
+              data-i18n-placeholder="courseworkSearchPlaceholder"
+            />
+            <button
+              class="project-search-button"
+              type="submit"
+              aria-label="Search coursework"
+              title="Search coursework"
+              data-i18n-aria-label="courseworkSearchButton"
+              data-i18n-title="courseworkSearchButton"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="project-suggestion-row" data-coursework-suggestion-pills></div>
+        </form>
       </section>
     </header>
 
     <main class="content project-page-shell project-page-top" data-coursework-page>
-      <section class="project-results-header" aria-live="polite">
+      <section class="project-results-header" aria-live="polite" data-coursework-results-header>
         <div class="project-results-inline">
           <p class="project-results-kicker" data-coursework-results-title>course details.</p>
           <div class="project-results-filters" data-coursework-filters></div>

@@ -86,6 +86,7 @@ const translations = {
     projectBackHome: "Back to home",
     navHome: "Home",
     navProgramming: "Programming Projects",
+    navCoursework: "Coursework",
     navCreative: "Creative Projects",
     navAbout: "About",
     navMenuOpen: "Open navigation",
@@ -99,6 +100,9 @@ const translations = {
     creativeSliderHint: "A collection of anything I like working on or am proud of.",
     courseworkPageTitle: "coursework.",
     courseworkPageSubtitle: "Classes, projects, and the specific skills each course sharpened.",
+    courseworkSearchLabel: "Find coursework",
+    courseworkSearchPlaceholder: "ex. COMS 4705, Python, UI",
+    courseworkSearchButton: "Search coursework",
     courseworkAllCourses: "All Coursework",
     courseworkResultsTitle: "course details.",
     courseworkNoResultsTitle: "No coursework matched that search.",
@@ -188,6 +192,7 @@ const translations = {
     projectBackHome: "返回首頁",
     navHome: "首頁",
     navProgramming: "程式專案",
+    navCoursework: "課程",
     navCreative: "創意專案",
     navAbout: "關於我",
     navMenuOpen: "打開導覽選單",
@@ -200,6 +205,9 @@ const translations = {
     creativeSliderHint: "收錄所有我喜歡投入、或自己覺得值得驕傲的作品。",
     courseworkPageTitle: "課程。",
     courseworkPageSubtitle: "上過的課、做過的作業，還有每門課真正磨練到的能力。",
+    courseworkSearchLabel: "找課程",
+    courseworkSearchPlaceholder: "例如 COMS 4705、Python、UI",
+    courseworkSearchButton: "搜尋課程",
     courseworkAllCourses: "全部課程",
     courseworkResultsTitle: "課程細節。",
     courseworkNoResultsTitle: "找不到符合的課程。",
@@ -290,6 +298,7 @@ const translations = {
     projectBackHome: "ホームへ戻る",
     navHome: "ホーム",
     navProgramming: "プログラミング作品",
+    navCoursework: "履修科目",
     navCreative: "クリエイティブ作品",
     navAbout: "私について",
     navMenuOpen: "ナビゲーションを開く",
@@ -303,6 +312,9 @@ const translations = {
     creativeSliderHint: "自分が取り組むのが好きなものや、誇りに思っているものを集めた作品集です。",
     courseworkPageTitle: "履修科目。",
     courseworkPageSubtitle: "授業ごとの内容、課題、そこから身についたスキル。",
+    courseworkSearchLabel: "授業を探す",
+    courseworkSearchPlaceholder: "例: COMS 4705、Python、UI",
+    courseworkSearchButton: "授業を検索",
     courseworkAllCourses: "すべての科目",
     courseworkResultsTitle: "授業の詳細。",
     courseworkNoResultsTitle: "一致する授業はありませんでした。",
@@ -393,6 +405,7 @@ const translations = {
     projectBackHome: "홈으로 돌아가기",
     navHome: "홈",
     navProgramming: "프로그래밍 프로젝트",
+    navCoursework: "수업",
     navCreative: "크리에이티브 프로젝트",
     navAbout: "소개",
     navMenuOpen: "탐색 메뉴 열기",
@@ -406,6 +419,9 @@ const translations = {
     creativeSliderHint: "제가 좋아서 해온 작업이나 자랑스럽게 생각하는 것들을 모아 둔 컬렉션입니다.",
     courseworkPageTitle: "수업 기록.",
     courseworkPageSubtitle: "들었던 수업, 만든 결과물, 그리고 각 수업에서 다듬은 기술들.",
+    courseworkSearchLabel: "수업 찾기",
+    courseworkSearchPlaceholder: "예: COMS 4705, Python, UI",
+    courseworkSearchButton: "수업 검색",
     courseworkAllCourses: "전체 수업",
     courseworkResultsTitle: "수업 상세.",
     courseworkNoResultsTitle: "일치하는 수업이 없습니다.",
@@ -430,7 +446,7 @@ const RECOMMENDED_PROJECT_TAGS = [
   "Research",
 ];
 const MOBILE_RECOMMENDED_PROJECT_TAGS = ["Git", "Python", "Swift", "UI"];
-const MAX_PROJECT_SUGGESTIONS = 5;
+const MAX_PROJECT_SUGGESTIONS = 4;
 const MAX_PROJECT_SUGGESTIONS_MOBILE = 3;
 let activeLanguage = "en";
 let caretHideTimeout = null;
@@ -785,6 +801,7 @@ function initFloatingSiteMenu() {
   const links = [
     { href: "index.html", key: "navHome" },
     { href: "programmingprojects.html", key: "navProgramming" },
+    { href: "coursework.html", key: "navCoursework" },
     { href: "creativeprojects.html", key: "navCreative" },
     { href: "aboutme.html", key: "navAbout" },
   ].map((item) => {
@@ -958,13 +975,29 @@ async function initCourseworkPage() {
   const title = document.querySelector("[data-coursework-title]");
   const subtitle = document.querySelector("[data-coursework-subtitle]");
   const resultsTitle = document.querySelector("[data-coursework-results-title]");
+  const searchForm = document.querySelector("[data-coursework-search-form]");
+  const searchInput = document.querySelector("[data-coursework-search-input]");
+  const suggestionPills = document.querySelector("[data-coursework-suggestion-pills]");
+  const resultsHeader = document.querySelector("[data-coursework-results-header]");
   const filtersRoot = document.querySelector("[data-coursework-filters]");
   const blocksRoot = document.querySelector("[data-coursework-blocks]");
 
-  if (!backButton || !title || !subtitle || !resultsTitle || !filtersRoot || !blocksRoot) return;
+  if (
+    !backButton ||
+    !title ||
+    !subtitle ||
+    !resultsTitle ||
+    !searchForm ||
+    !searchInput ||
+    !suggestionPills ||
+    !resultsHeader ||
+    !filtersRoot ||
+    !blocksRoot
+  ) return;
 
   const coursework = await loadCoursework();
   if (!Array.isArray(coursework)) return;
+  const suggestionValues = getCourseworkSuggestionValues(coursework);
 
   const render = () => {
     const strings = getCurrentStrings();
@@ -983,6 +1016,8 @@ async function initCourseworkPage() {
     title.textContent = strings.courseworkPageTitle;
     subtitle.textContent = strings.courseworkPageSubtitle;
     resultsTitle.textContent = strings.courseworkResultsTitle;
+    searchInput.value = query;
+    renderCourseworkSuggestionPills(suggestionPills, suggestionValues, query);
 
     const matches =
       !normalizedFilters.length
@@ -999,6 +1034,7 @@ async function initCourseworkPage() {
             return normalizedFilters.every((filter) => haystack.includes(filter));
           });
 
+    resultsHeader.hidden = false;
     renderProjectResultsFilters(
       filtersRoot,
       filters.length ? filters : [strings.courseworkAllCourses]
@@ -1032,6 +1068,49 @@ async function initCourseworkPage() {
     const skill = skillButton.getAttribute("data-course-skill");
     if (!skill) return;
     navigateToUrl(createSearchUrl("programmingprojects.html", skill));
+  });
+
+  suggestionPills.addEventListener("click", (event) => {
+    const button = event.target.closest(".project-suggestion-pill");
+    if (!button) return;
+    const value = button.getAttribute("data-coursework-suggestion");
+    if (!value) return;
+    searchInput.value = buildProjectSearchValueWithOptions(searchInput.value, value, {
+      appendDelimiter: true,
+    });
+    searchInput.focus();
+    renderCourseworkSuggestionPills(suggestionPills, suggestionValues, searchInput.value);
+  });
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const nextUrl = new URL(window.location.href);
+    const query = searchInput.value.trim();
+
+    if (query) {
+      nextUrl.searchParams.set("q", query);
+    } else {
+      nextUrl.searchParams.delete("q");
+    }
+
+    window.history.replaceState({}, "", nextUrl);
+    render();
+  });
+
+  searchInput.addEventListener("input", () => {
+    renderCourseworkSuggestionPills(suggestionPills, suggestionValues, searchInput.value);
+  });
+
+  searchInput.addEventListener("search", () => {
+    if (searchInput.value.trim()) return;
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.delete("q");
+    window.history.replaceState({}, "", nextUrl);
+    render();
+  });
+
+  window.addEventListener("resize", () => {
+    renderCourseworkSuggestionPills(suggestionPills, suggestionValues, searchInput.value);
   });
 
   backButton.addEventListener("click", () => {
@@ -1738,9 +1817,6 @@ function createCourseworkCard(course) {
   const article = document.createElement("article");
   article.className = "neumo-card project-card coursework-card";
 
-  const grid = document.createElement("div");
-  grid.className = "card-grid";
-
   const text = document.createElement("div");
   text.className = "card-text";
 
@@ -1765,13 +1841,7 @@ function createCourseworkCard(course) {
   if (code.textContent) text.append(code);
   if (tags) text.append(tags);
   text.append(description);
-
-  const media = document.createElement("div");
-  media.className = "card-media";
-  media.appendChild(createCourseworkMedia(course));
-
-  grid.append(text, media);
-  article.appendChild(grid);
+  article.appendChild(text);
   return article;
 }
 
@@ -1798,26 +1868,6 @@ function createCourseSkillTagList(skills) {
   });
 
   return list;
-}
-
-function createCourseworkMedia(course) {
-  const frame = document.createElement("div");
-  frame.className = "project-image-frame coursework-image-frame";
-
-  const label = document.createElement("div");
-  label.className = "coursework-media-label";
-
-  const code = document.createElement("span");
-  code.className = "coursework-media-code";
-  code.textContent = course?.Code || "Course";
-
-  const name = document.createElement("span");
-  name.className = "coursework-media-name";
-  name.textContent = course?.Name || "Coursework";
-
-  label.append(code, name);
-  frame.appendChild(label);
-  return frame;
 }
 
 function createProjectTagList(tags) {
@@ -2111,6 +2161,53 @@ function renderProjectSuggestionPills(container, suggestions, query) {
 
 function isNarrowViewport() {
   return window.matchMedia("(max-width: 640px)").matches;
+}
+
+function getCourseworkSuggestionValues(coursework) {
+  const suggestions = new Set();
+
+  coursework.forEach((course) => {
+    if (typeof course?.Name === "string" && course.Name.trim()) {
+      suggestions.add(course.Name.trim());
+    }
+
+    if (typeof course?.Code === "string" && course.Code.trim()) {
+      suggestions.add(course.Code.trim());
+    }
+
+    if (Array.isArray(course?.Skills)) {
+      course.Skills.forEach((skill) => {
+        if (typeof skill === "string" && skill.trim()) {
+          suggestions.add(skill.trim());
+        }
+      });
+    }
+  });
+
+  return Array.from(suggestions).sort((a, b) => a.localeCompare(b));
+}
+
+function renderCourseworkSuggestionPills(container, suggestions, query) {
+  const suggestionLimit = isNarrowViewport()
+    ? MAX_PROJECT_SUGGESTIONS_MOBILE
+    : MAX_PROJECT_SUGGESTIONS;
+  const activeFilter = getActiveProjectSearchFilter(query);
+  const visibleSuggestions = activeFilter
+    ? suggestions
+        .filter((value) => value.toLowerCase().includes(activeFilter))
+        .slice(0, suggestionLimit)
+    : suggestions.slice(0, suggestionLimit + 2);
+
+  container.replaceChildren(
+    ...visibleSuggestions.map((value) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "project-suggestion-pill";
+      button.textContent = value;
+      button.setAttribute("data-coursework-suggestion", value);
+      return button;
+    })
+  );
 }
 
 function renderProjectSearchResults({
