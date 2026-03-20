@@ -66,9 +66,9 @@
     "image": "assets/images/lhscourseplanner.png",
     "description": "Built an iOS course planning app in Swift that helps students map out four-year graduation plans. Used MVVM architecture and CoreData for a scalable, polished experience with persistent scheduling and an intuitive interface.",
     "links": {
-      "github": "https://github.com/rickeychiu/lhs-courseplanner"
+      "github": "https://github.com/rickeychiu/lhs-courseplanner-2"
     },
-    "tags": ["Software Engineering", "Full-Stack", "Swift", "App Development", "User Interface (UI)", "Git", "English"]
+    "tags": ["Software Engineering", "Full-Stack", "Swift", "App Development", "User Interface (UI)", "CoreData", "SwiftUI", "Git", "English"]
   },
   {
     "title": {
