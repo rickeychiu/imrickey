@@ -20,12 +20,12 @@
       "ja": "コンピュータグラフィックス画像彩色のための畳み込みニューラルネットワーク",
       "ko": "컴퓨터 그래픽스 이미지 컬러라이제이션을 위한 합성곱 신경망"
     },
-    "image": "assets/images/dlcg-project2.jpg",
+    "image": "assets/images/dlcg-project2.png",
     "description": "Built a PyTorch image colorization pipeline that learns to reconstruct LAB color channels from grayscale inputs. The project moved from a compact CNN regressor baseline to a deeper encoder-decoder colorizer, then extended the model with GPU training and transfer learning on a second dataset to study generalization beyond the original face images.",
     "links": {
       "project": "assets/pdfs/DLCGProject2Report.pdf"
     },
-    "tags": ["Computer Graphics", "Computer Vision", "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)", "Transfer Learning", "Python", "AWS", "English"]
+    "tags": ["Computer Graphics", "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)", "Transfer Learning", "Python", "AWS", "English"]
   },
   {
     "title": {
