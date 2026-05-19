@@ -81,6 +81,7 @@ const translations = {
     projectAllProjects: "All Projects",
     projectActionOpen: "Open Project",
     projectActionWebsite: "Open Website",
+    projectActionMedia: "View Media",
     projectActionGithub: "View Code in GitHub",
     projectBackProjects: "Back to programming projects",
     projectBackHome: "Back to home",
@@ -187,6 +188,7 @@ const translations = {
     projectAllProjects: "全部專案",
     projectActionOpen: "開啟專案",
     projectActionWebsite: "開啟網站",
+    projectActionMedia: "查看媒體",
     projectActionGithub: "查看 GitHub 程式碼",
     projectBackProjects: "回到程式專案頁",
     projectBackHome: "返回首頁",
@@ -293,6 +295,7 @@ const translations = {
     projectAllProjects: "すべての作品",
     projectActionOpen: "プロジェクトを開く",
     projectActionWebsite: "サイトを開く",
+    projectActionMedia: "メディアを見る",
     projectActionGithub: "GitHub のコードを見る",
     projectBackProjects: "プログラミング作品へ戻る",
     projectBackHome: "ホームへ戻る",
@@ -400,6 +403,7 @@ const translations = {
     projectAllProjects: "전체 프로젝트",
     projectActionOpen: "프로젝트 열기",
     projectActionWebsite: "웹사이트 열기",
+    projectActionMedia: "미디어 보기",
     projectActionGithub: "GitHub 코드 보기",
     projectBackProjects: "프로그래밍 프로젝트로 돌아가기",
     projectBackHome: "홈으로 돌아가기",
@@ -1156,8 +1160,8 @@ async function initProgrammingProjects() {
   ]);
   const items =
     Array.isArray(projects) && projects.length > 0
-      ? projects
-      : getFallbackProgrammingProjects();
+      ? sortProjectsByDisplayOrder(projects)
+      : sortProjectsByDisplayOrder(getFallbackProgrammingProjects());
   const suggestionValues = getProjectSuggestionValues(items, coursework);
   cachedProjectSuggestionValues = suggestionValues;
   let sliderLoopWidth = 0;
@@ -1936,7 +1940,7 @@ function createCreativeActionRow(project) {
 }
 
 function createProjectActionIcon(type) {
-  if (type === "github" || type === "project" || type === "website") {
+  if (type === "github" || type === "project" || type === "website" || type === "media") {
     const image = document.createElement("img");
     image.className = "project-action-icon";
     image.src =
@@ -1976,7 +1980,12 @@ function createProjectPlaceholder(title) {
 
 function getProjectField(project, field, fallback) {
   const value = project?.[field];
-  return typeof value === "string" && value.trim() ? value.trim() : fallback;
+  if (typeof value === "string" && value.trim()) return value.trim();
+  if (value && typeof value === "object") {
+    const localized = value[activeLanguage] ?? value.en;
+    if (typeof localized === "string" && localized.trim()) return localized.trim();
+  }
+  return fallback;
 }
 
 function getLocalizedAboutValue(value, fallback = "") {
@@ -2025,6 +2034,18 @@ function getProjectTitleValues(project) {
   return [];
 }
 
+function getProjectDescriptionValues(project) {
+  const description = project?.description;
+  if (typeof description === "string" && description.trim()) return [description.trim()];
+  if (description && typeof description === "object") {
+    return Object.values(description)
+      .filter((value) => typeof value === "string")
+      .map((value) => value.trim())
+      .filter(Boolean);
+  }
+  return [];
+}
+
 function getProjectTags(project) {
   if (!Array.isArray(project?.tags)) return [];
 
@@ -2038,6 +2059,7 @@ function getProjectActions(project) {
   const links = project?.links ?? {};
   const projectHref = normalizeProjectLink(links.project);
   const websiteHref = normalizeProjectLink(links.website);
+  const mediaHref = normalizeProjectLink(links.media);
   const githubHref = normalizeProjectLink(links.github ?? project?.github);
   const actions = [];
 
@@ -2065,7 +2087,33 @@ function getProjectActions(project) {
     });
   }
 
+  if (mediaHref) {
+    actions.push({
+      href: mediaHref,
+      label: getCurrentStrings().projectActionMedia,
+      type: "media",
+    });
+  }
+
   return actions;
+}
+
+function sortProjectsByDisplayOrder(projects) {
+  return [...projects]
+    .map((project, index) => ({ project, index }))
+    .sort((a, b) => {
+      const orderDifference =
+        getProjectDisplayOrder(a.project, a.index) -
+        getProjectDisplayOrder(b.project, b.index);
+
+      return orderDifference || a.index - b.index;
+    })
+    .map(({ project }) => project);
+}
+
+function getProjectDisplayOrder(project, fallbackIndex) {
+  const order = Number(project?.order);
+  return Number.isFinite(order) ? order : fallbackIndex + 101;
 }
 
 function getCreativeProjectActions(project) {
@@ -2236,7 +2284,7 @@ function renderProjectSearchResults({
     : projects.filter((project) => {
         const haystack = [
           ...getProjectTitleValues(project),
-          getProjectField(project, "description", ""),
+          ...getProjectDescriptionValues(project),
           ...getProjectTags(project),
         ]
           .join(" ")

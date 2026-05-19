@@ -1,5 +1,69 @@
 [
   {
+    "order": 1,
+    "title": {
+      "en": "Angry Balls: An Object-Aware Physics Game",
+      "zh": "Angry Balls：物件感知物理遊戲",
+      "ja": "Angry Balls：物体認識型物理ゲーム",
+      "ko": "Angry Balls: 객체 인식 물리 게임"
+    },
+    "image": "assets/images/angryballspreview.png",
+    "description": {
+      "en": "Built an Angry Birds-inspired physics game that connects object detection, custom scene building, and reinforcement learning. The project focused on making user-created structures testable by a learned agent, with visual simulation modes for evaluating how well the policy generalizes.",
+      "zh": "打造了一款受 Angry Birds 啟發的物理遊戲，結合物件偵測、自訂場景建構與強化學習。專案重點是讓使用者自製結構能被學習型代理測試，並透過視覺化模擬觀察策略的泛化能力。",
+      "ja": "Angry Birds に着想を得た物理ゲームを制作し、物体検出、カスタムシーン作成、強化学習をつなげました。ユーザーが作った構造物を学習済みエージェントで検証し、可視化シミュレーションで方策の汎化性能を確認できるようにしました。",
+      "ko": "Angry Birds에서 영감을 받은 물리 게임을 만들고 객체 탐지, 커스텀 장면 제작, 강화학습을 연결했습니다. 사용자가 만든 구조물을 학습된 에이전트로 테스트하고, 시각화된 시뮬레이션으로 정책의 일반화 성능을 확인하는 데 집중했습니다."
+    },
+    "links": {
+      "project": "assets/pdfs/angryballsreport.pdf",
+      "media": "assets/pdfs/Angry Balls Poster.pdf"
+    },
+    "tags": ["Computer Graphics", "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Research", "PyGame", "Reinforcement Learning (RL)"]
+  },
+  {
+    "order": 65,
+    "title": {
+      "en": "Redstone Door Tutor Website",
+      "zh": "紅石門教學網站",
+      "ja": "レッドストーンドア学習サイト",
+      "ko": "레드스톤 문 튜터 웹사이트"
+    },
+    "image": "assets/images/redstonedoorpreview.png",
+    "description": {
+      "en": "Designed and built an interactive Minecraft-inspired tutoring site that teaches redstone door logic through visual states, guided lessons, and quizzes. The project focused on making a technical concept easier to understand with a polished Bootstrap interface and clear interaction flow.",
+      "zh": "設計並製作了一個受 Minecraft 啟發的互動教學網站，用視覺狀態、引導式課程與測驗來教紅石門邏輯。專案重點是透過精緻的 Bootstrap 介面與清楚的互動流程，讓技術概念更容易理解。",
+      "ja": "Minecraft に着想を得たインタラクティブな学習サイトを設計・実装し、視覚的な状態表示、ガイド付きレッスン、クイズでレッドストーンドアの仕組みを学べるようにしました。Bootstrap を使った見やすい UI と分かりやすい操作フローを重視しました。",
+      "ko": "Minecraft에서 영감을 받은 인터랙티브 튜터링 사이트를 설계하고 구현해, 시각적 상태와 단계별 학습, 퀴즈로 레드스톤 문 로직을 배울 수 있게 했습니다. Bootstrap 기반의 깔끔한 UI와 명확한 상호작용 흐름에 집중했습니다."
+    },
+    "links": {
+      "media": "https://youtu.be/HipJQHr41R0",
+      "github": "https://github.com/rickeychiu/ui-finalproject"
+    },
+    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "Bootstrap", "HTML", "CSS", "JavaScript", "Git"]
+  },
+  {
+    "order": 5,
+    "title": {
+      "en": "GAMESEARCH",
+      "zh": "GAMESEARCH 遊戲搜尋引擎",
+      "ja": "GAMESEARCH ゲーム検索エンジン",
+      "ko": "GAMESEARCH 게임 검색 엔진"
+    },
+    "image": "assets/images/gamesearchpreview.png",
+    "description": {
+      "en": "Built a game discovery website that helps users browse popular titles and find games that match their interests. The project emphasized searchable content, clear Bootstrap layouts, and a straightforward browsing flow for comparing options quickly.",
+      "zh": "製作了一個遊戲探索網站，讓使用者瀏覽熱門遊戲並找到符合興趣的作品。專案重點是可搜尋內容、清楚的 Bootstrap 版面，以及能快速比較選項的瀏覽流程。",
+      "ja": "人気ゲームを閲覧し、自分の興味に合う作品を探せるゲーム発見サイトを制作しました。検索しやすいコンテンツ、分かりやすい Bootstrap レイアウト、素早く比較できる閲覧フローを重視しました。",
+      "ko": "인기 게임을 둘러보고 관심사에 맞는 게임을 찾을 수 있는 게임 탐색 웹사이트를 만들었습니다. 검색 가능한 콘텐츠, 명확한 Bootstrap 레이아웃, 빠르게 비교할 수 있는 탐색 흐름에 중점을 두었습니다."
+    },
+    "links": {
+      "media": "https://youtu.be/hhQDnBTZD7Y",
+      "github": "https://github.com/rickeychiu/gamesearch"
+    },
+    "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "Bootstrap", "HTML", "CSS", "JavaScript", "Git"]
+  },
+  {
+    "order": 70,
     "title": {
       "en": "Classifiers and Regressors for Computer Graphics",
       "zh": "電腦圖學的分類器與回歸模型",
@@ -11,9 +75,10 @@
     "links": {
       "project": "assets/pdfs/simplelearningmodelsforCG.pdf"
     },
-    "tags": ["Computer Graphics",  "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)",  "Python", "English"]
+    "tags": ["Computer Graphics", "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)", "Python", "English"]
   },
   {
+    "order": 20,
     "title": {
       "en": "Convolutional Neural Networks for Computer Graphics Image Colorization",
       "zh": "用於電腦圖學影像上色的卷積神經網路",
@@ -28,6 +93,7 @@
     "tags": ["Computer Graphics", "Deep Learning", "PyTorch", "Artificial Intelligence (AI)", "Machine Learning (ML)", "Transfer Learning", "Python", "AWS", "English"]
   },
   {
+    "order": 30,
     "title": {
       "en": "Hybrid Transformer U-Net for Cell Segmentation",
       "zh": "用於細胞分割的混合式 Transformer U-Net",
@@ -40,9 +106,10 @@
       "project": "assets/pdfs/Cell_Segmentation_Conference_Paper.pdf",
       "website": ""
     },
-    "tags": ["Machine Learning (ML)",  "Deep Learning", "Research", "Artificial Intelligence (AI)", "Biomedical", "Python", "PyTorch", "English"]
+    "tags": ["Machine Learning (ML)", "Deep Learning", "Research", "Artificial Intelligence (AI)", "Biomedical", "Python", "PyTorch", "English"]
   },
   {
+    "order": 3,
     "title": {
       "en": "B<AFTER Salon Website",
       "zh": "B<AFTER 沙龍網站",
@@ -57,6 +124,7 @@
     "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git", "Japanese"]
   },
   {
+    "order": 7,
     "title": {
       "en": "SkyOre Indie Platformer Game",
       "zh": "SkyOre 獨立平台遊戲",
@@ -71,6 +139,7 @@
     "tags": ["Unity Game Engine", "C#", "Game Development", "Animation", "Game Design", "ShaderLab", "Git", "English"]
   },
   {
+    "order": 4,
     "title": {
       "en": "LHS Course Planner iOS App",
       "zh": "LHS 課程規劃 iOS App",
@@ -85,6 +154,7 @@
     "tags": ["Software Engineering", "Full-Stack", "Swift", "App Development", "User Interface (UI)", "CoreData", "SwiftUI", "Git", "English"]
   },
   {
+    "order": 70,
     "title": {
       "en": "S2NM Company Website",
       "zh": "S2NM 公司網站",
@@ -99,6 +169,7 @@
     "tags": ["User Interface (UI)", "User Experience (UX)", "Front-End", "HTML", "CSS", "JavaScript", "PHP", "Git", "Japanese"]
   },
   {
+    "order": 80,
     "title": {
       "en": "Budgeteer",
       "zh": "Budgeteer",
@@ -112,8 +183,8 @@
     },
     "tags": ["FinTech", "Full-Stack", "React", "Tailwind CSS", "Node.js", "Hackathon", "Git", "English"]
   },
-  
   {
+    "order": 90,
     "title": {
       "en": "Personal Portfolio Website",
       "zh": "我的作品集網站",

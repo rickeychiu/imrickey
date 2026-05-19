@@ -37,5 +37,18 @@
     "links": {
       "design": "assets/images/voguedesign.png"
     }
+  },
+  {
+    "title": {
+      "en": "Love For All",
+      "zh": "Love For All",
+      "ja": "Love For All",
+      "ko": "Love For All"
+    },
+    "image": "assets/images/unitednations2.5.png",
+    "description": "A poster-style design about the quiet beauty of shared humanity: the idea that people can love what makes us familiar to one another while still honoring the differences that give each life its own shape, color, and rhythm.",
+    "links": {
+      "design": "assets/images/unitednations2.5.png"
+    }
   }
 ]
